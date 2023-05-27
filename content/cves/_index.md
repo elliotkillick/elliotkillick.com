@@ -65,7 +65,7 @@ CVSS: <span style="color: red; font-weight: bold">X</span><br />
 
 <br />
 
-I've also made multiple contributions directly to defensive security by solving problems with secure code (see my GitHub).
+I've also made multiple contributions directly to defensive security by solving problems with secure design and code (see my GitHub).
 
 <br />
 
