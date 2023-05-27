@@ -40,7 +40,7 @@ CVSS: <span style="color: red; font-weight: bold">X</span><br />
 
 **Once it's been patched, expect to see a blog post on the vulnerability and exploit. It will cover a lot of things such as why this vulnerability has existed for so long in such a common part of the code despite large efforts in fuzzing the Source Engine, previously unseen techniques I used which made exploit creation and hacking around with the Source Engine 1000x easier, touch on this bug's exploitability even under next-gen exploit mitigations (e.g. Intel CET and memory tagging), and more.**
 
-**Lastly, I'll talk about how I created my first RCE exploit from practically no prior binary exploitation experience and give some ideas on how you could easily do the same thing. Additionally, you will be able to find all the tools I created along the way to assist exploitation efforts and greatly increase debugging productivity open source on GitHub.**
+**Lastly, I'll talk about how I created my first RCE exploit from practically no prior binary exploitation experience and give some ideas on how you could easily do the same thing. Additionally, all the tools I created along the way to assist exploitation efforts and greatly increase debugging productivity will be open sourced on GitHub.**
 
 [HackerOne Report](https://hackerone.com)
 
@@ -61,7 +61,11 @@ CVSS: <span style="color: red; font-weight: bold">X</span><br />
   - Demonstrates how misuse of programs built into the latest versions of Windows can pose a security threat
   - These are especially helpful for bypassing detection in early post-exploitation phases before loading a custom implant
     - Some of them also work well as hidden persistence mechanisms
-- A couple undisclosed remote zero day bugs
+- A couple currently undisclosed remote zero day bugs
+
+<br />
+
+I've also made multiple contributions directly to defensive security by solving problems with secure code (see my GitHub).
 
 <br />
 
