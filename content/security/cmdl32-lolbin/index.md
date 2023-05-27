@@ -1,7 +1,7 @@
 +++
 title="Cmdl32 Lolbin: A New Downloader Baked into Windows"
 description="How you could have found it yourself and how it went undetected for over a decade..."
-date=2023-26-01
+date=2023-01-27
 
 [taxonomies]
 categories = ["lolbin"]
