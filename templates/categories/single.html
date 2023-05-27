@@ -1,0 +1,15 @@
+{%- extends "index.html"-%}
+{%- block title %}
+<title>{{ term.name }} | {{ config.title }}</title>
+{%- endblock title %}
+
+{%- block content -%}
+<div class="container {{ grid_size }}">
+    <div class="content-title text-center">
+        <h1 class="post-title"> Category: {{ term.name }} ({{ term.pages | length }})</h1>
+    </div>
+    <div class="blog-listing">
+    {{ lists::list_pages(pages=term.pages) }}
+    </div>
+</div>
+{%- endblock content -%}

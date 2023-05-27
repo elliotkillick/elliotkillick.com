@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{%- block title %}
+<title>Categories | {{ config.title }}</title>
+{%- endblock title -%}
+
+{%- block content -%}
+<div class="container {{ grid_size }}">
+    <div class="content-title">
+      <h1 class="post-title">Categories</h1>
+    </div>
+    <ul class="taxonomy">
+    {%- for cat in terms -%}
+    <li>
+      <div class="columns">
+        <div class="column col-6">
+          <a
+            class="label label-rounded label-secondary"
+            href="{{ get_taxonomy_url(kind='categories', name=cat.name) }}">
+            {{ cat.name }}
+          </a>
+        </div>
+        <div class="column col-6">
+          ({{ cat.pages | length }} post{{ cat.pages | length | pluralize}})
+        </div>
+    </li>
+    {%- endfor -%}
+    </ul>
+</div><!--./container-->
+{%- endblock content -%}

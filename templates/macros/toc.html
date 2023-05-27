@@ -1,0 +1,60 @@
+<!-- MY EDIT -->
+<!-- Add table of contents generation -->
+
+{% macro generate(page, sidebar, sticky=false) %}
+{% if sidebar -%}
+{% if not sticky -%}
+<div class="toc-row hide-md" alt="Table of Contents">
+{% else %}
+<div class="toc-row hide-md" style="position: sticky; top: 1rem; margin-bottom: 42px" alt="Table of Contents">
+{% endif -%}
+{% else %}
+<div class="toc-row show-md" style="padding-top: 0.8rem" alt="Table of Contents">
+{% endif -%}
+  <div class="toc-col">
+    <div class="toc-tabs">
+      <div class="toc-tab">
+        {% if sidebar -%}
+        {% if not sticky -%}
+        <input type="checkbox" id="toc-sidebar" checked>
+	<label class="toc-tab-label" for="toc-sidebar">Jump Table</label>
+	{% else %}
+	<input type="checkbox" id="toc-sidebar-sticky" checked>
+        <label class="toc-tab-label" for="toc-sidebar-sticky">Jump Table</label>
+        {% endif -%}
+        {% else %}
+        <input type="checkbox" id="toc-card">
+	<label class="toc-tab-label" for="toc-card">Jump Table</label>
+        {% endif -%}
+        <div class="toc-tab-content">
+<ul style="margin: 0">
+  {% for h1 in page.toc %}
+    <li class="main-heading">
+      <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a> 
+      {% if h1.children %}
+        <ul>
+          {% for h2 in h1.children %}
+            <li>
+              <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+	      {% if h2.children %}
+                <ul>
+                  {% for h3 in h2.children %}
+                    <li>
+                      <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                    </li> 
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro generate %}

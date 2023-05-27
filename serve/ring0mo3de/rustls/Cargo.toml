@@ -1,0 +1,17 @@
+[package]
+name = "serve"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+actix-web = { version = "4", features = ["rustls"] }
+actix-files = "0"
+
+log = "0"
+env_logger = "0"
+
+# Prevent API conflict with Actix
+rustls = "0.20"
+rustls-pemfile = "1"
+
+tokio = { version = "1", features = ["signal"] }

@@ -1,0 +1,84 @@
+/* Source: https://codepen.io/raubaca/pen/PZzpVe */
+
+input#toc-sidebar, input#toc-sidebar-sticky {
+  position: absolute;
+  opacity: 0;
+}
+
+input#toc-card {
+  position: absolute;
+  opacity: 0;
+}
+
+.toc-row {
+  margin-bottom: 1rem;
+}
+
+.toc-tabs {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+
+.toc-tab {
+  overflow: hidden;
+}
+
+.toc-tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  background: white;
+}
+
+/* MY EDIT */
+/* Avoid sticky hover on touch screens */
+@media (hover: hover) {
+  .toc-tab-label:hover {
+    background: #e6e6e6;
+  }
+}
+
+.toc-tab-label::after {
+  content: "❯";
+  width: 1em;
+  text-align: center;
+  transition: all 0.35s;
+}
+
+.toc-tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  transition: all 0.35s;
+  background: white;
+}
+
+/* MY EDIT */
+/* Set background on tap for touch screens */
+@media (hover: none) {
+  input:checked + .toc-tab-label {
+    background: #e6e6e6;
+  }
+}
+
+/* MY EDIT */
+/* Fix accordian menu margins for first and last main headings */
+/* Also, fix an issue where the TOC would stay open a little bit when closed */
+.main-heading:first-of-type {
+  margin: 0;
+}
+
+.main-heading:last-of-type {
+  margin: 0;
+}
+
+input:checked + .toc-tab-label::after {
+  transform: rotate(90deg);
+}
+
+input:checked ~ .toc-tab-content {
+  max-height: 100vh;
+  padding: 1em;
+}

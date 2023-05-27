@@ -1,0 +1,33 @@
+Zola development serve to intranet (port forward from Qubes OS):
+Dom0: ./qvm-portfwd-iptables-fepitre.sh --action create --qube website --port 1111
+AppVM: zola serve -i 0.0.0.0 -u 192.168.0.2
+    - -u affects what get_url() in Tera templating language returns, this should be the IP of sys-net
+Temporarily comment out HTTPS upgrade CSP from templates/index.html
+
+Get ECC certificate for ping.elliotkillick.com:
+sudo certbot certonly --nginx -d ping.elliotkillick.com --key-type ecdsa
+Certbot will now automatically renew this certificate.
+
+Get ECC certificate for ring0mo.de:
+sudo certbot certonly --webroot --webroot-path /home/ubuntu/serve/public -d ring0mo.de --key-type ecdsa
+Ensure the Actix Files web server has use_hidden_files() enabled.
+Certbot will now automatically renew this certificate.
+However, you still have to reload ("systemctl reload" is equivalent to sending "SIGHUP") the server or reverse proxy for it to read the new certificate from disk into memory. I've implemented this in the rustls server.
+
+Create a swap file:
+https://linuxize.com/post/create-a-linux-swap-file/
+3 GiB swap file (for 4 GiB of RAM in total)
+swappiness = 10
+
+VPS Hosting
+===========
+Development:
+cd serve
+cargo run
+
+Production:
+Change "base_url" in "config.toml" to full domain
+zola build
+cd serve
+cargo build --release (or -r)
+target/release/serve &

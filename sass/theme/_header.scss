@@ -1,0 +1,106 @@
+#header {
+  width: 100%;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  // MY EDIT
+  // Faded border
+  box-shadow: 0 30px 40px rgba(0, 0, 0, 0.125);
+  //border-bottom: 1px solid rgba(172, 179, 194, 0.2);
+
+  a {
+    padding: 16px 30px 7px 30px;
+    color: #454d5d;
+    font-size: 16px;
+  }
+
+  .header-dark &:not(.scrolled) {
+    background: $header-color-dark;
+    color: $light-color;
+    a {
+      color: rgba($light-color, 0.7) !important;
+    }
+    a.active {
+      color: $light-color !important;
+    }
+    .dropmenu ul ul a {
+        color: $dark-color !important;
+    }
+    .logo svg path {
+      fill: $light-color;
+    }
+  }
+
+  .navbar-section {
+    height: $header-height-large;
+
+    @include breakpoint(md) {
+      /* MY EDIT */
+      /* Fix title going off navbar on small screens */
+      margin-right: 0rem;
+    }
+
+    &:not(:first-child):last-child {
+      @include breakpoint(sm) {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .navbar-section.desktop-menu {
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+
+  /**
+  .logo {
+    svg, img {
+      height: 100px;
+      display: inherit;
+    }
+  }
+
+  .logo svg path {
+    fill: $header-color-dark;
+  }  **/
+
+  // Fixed Header solution
+  .header-fixed & {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+// Animate Fixed Header
+body.header-fixed.header-animated {
+  #header.scrolled {
+    height: $header-height-small;
+
+    .navbar-section {
+      height: $header-height-small;
+    }
+
+    /**
+    .logo {
+      svg, img {
+        height: 28px;
+      }
+    }**/
+
+    ~ .mobile-menu .button_container {
+      top: 0.5rem;
+    }
+  }
+}
+
+// MY EDIT
+// Montserrat font for Safari (and possibly other browsers) where it's not baked in
+@font-face {
+  font-family: "Montserrat";
+  src: url(/assets/fonts/Montserrat-Bold.ttf) format("truetype");
+}
+
+// Search

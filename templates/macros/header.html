@@ -1,0 +1,46 @@
+{% macro header(grid_size) %}
+<header id="header" class="section">
+  <section class="container {{ grid_size }}">
+    <nav class="navbar">
+      <!-- MY EDIT -->
+      <!-- Have separate home buttons for larger and smaller displays so we can optimally adjust the paddings on each -->
+      <!-- Vertically center home button and mak sure it stays on one line -->
+      <section class="navbar-section hide-md">
+        {{ menu::home() }}
+      </section>
+      <section class="show-md" style="padding-top: 22px">
+        {{ menu::home() }}
+      </section><!-- ./home button -->
+
+      <section class="navbar-center hide-md"></section>
+
+      <section class="navbar-section">
+        <nav class="dropmenu animated {% if config.extra.hamburger_menu -%} hide-md {%- endif -%}">
+          {%- if config.languages -%}
+            {# TODO #}
+            {{ lang::langswitcher() }}
+          {%- endif -%}
+
+          {% if config.extra.main_menu -%}
+            {{ menu::items(menu=config.extra.main_menu) }}
+          {% endif -%}
+        </nav>
+      </section><!-- ./desktop-menu -->
+    </nav>
+  </section><!-- ./container -->
+  <!-- MY EDIT -->
+  <!-- Add matrix effect -->
+  <canvas id="matrix-effect"></canvas>
+</header>
+
+{% if config.extra.hamburger_menu %}
+<div class="mobile-menu">
+  <div class="button_container" id="toggle">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+  </div>
+</div><!--./mobile-menu-->
+{% endif %}
+
+{% endmacro header %}

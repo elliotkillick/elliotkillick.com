@@ -1,0 +1,6 @@
+*.swp
+*.swo
+/public
+/static/processed_images
+/serve/**/Cargo.lock
+/serve/**/target

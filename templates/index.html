@@ -1,0 +1,210 @@
+{# Macros #}
+{% import "macros/head.html" as head -%}
+{% import "macros/logo.html" as logo -%}
+{% import "macros/header.html" as header -%}
+{% import "macros/lists.html" as lists -%}
+{% import "macros/posts.html" as posts -%}
+{% import "macros/social.html" as social -%}
+{% import "macros/utils.html" as utils -%}
+{% import "macros/menu.html" as menu -%}
+{% import "macros/breadcrumbs.html" as breadcrumbs -%}
+{% import "macros/social_buttons.html" as social_buttons -%}
+{% import "macros/sidebar.html" as sidebar -%}
+{% import "macros/theme_switcher.html" as theme_switcher -%}
+{% import "macros/footer.html" as footer -%}
+{%- import "macros/pagination.html" as pagination -%}
+{% import "macros/toc.html" as toc -%}
+{% import "macros/pagination_page.html" as pagination_page -%}
+{# import "macros/extended_footer.html" as extended_footer -#}
+{# MY EDIT -#}
+{# Add table of contents generation (import toc.html and pagination_page.html) -#}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <!-- MY EDIT -->
+  <!-- Fix Zola 0.14 bug, add this back once Cloudflare Pages updates build images: {# config.default_language #} -->
+  <head>
+    {%- block title -%}
+        <title>{{ config.title }}</title>
+    {%- endblock title -%}
+
+    {%- block general_meta -%}
+        {{ head::general_meta() }}
+    {%- endblock general_meta -%}
+
+    {%- block og_preview -%}
+        {{ social::og_preview() }}
+    {%- endblock og_preview -%}
+
+    {%- block twitter_preview -%}
+        {{ social::twitter_preview() }}
+    {%- endblock twitter_preview -%}
+
+    {%- block fonts -%}
+        {{ head::fonts() }}
+    {%- endblock fonts -%}
+
+    {%- block css -%}
+        {{ head::styling() }}
+    {%- endblock css -%}
+
+    {%- block favicon -%}
+        {{ head::favicon() }}
+    {%- endblock favicon -%}
+
+    {%- block rss -%}
+        {{ head::rss() }}
+    {%- endblock rss -%}
+
+    {%- block math -%}
+      {# TODO KaTeX #}
+    {%- endblock math -%}
+
+    <!-- MY EDIT -->
+    <!-- Force upgrading to HTTPS -->
+    <!-- The twitter embed was (under some circumstances) fetching content from HTTP links even when the endpoint supported HTTPS -->
+    <!-- Help mitigate XSS by specifying where scripts can be loaded from -->
+    <!-- Improve security and pass Lighthouse test -->
+    <!--
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="object-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://ping.elliotkillick.com https://platform.twitter.com https://cdn.syndication.twimg.com">
+    -->
+
+    <!-- Icons -->
+    <!-- Thank you to https://realfavicongenerator.net for generating these -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/icons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#f5d059">
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#f5d059">
+    <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+    <meta name="theme-color" content="#f5d059">
+
+    <!-- Custom CSS -->
+    <!-- Best practice would be to put this in the SASS directory (SASS is a superset of CSS meaning it's fully compatible) so it becomes part of the single minimized theme.css file -->
+    <!-- Hopefully HTTP/2 multiplexing will make this all be fetched as one request anyway -->
+    <link rel="stylesheet" href="/assets/stylesheets/cursor.css">
+    <link rel="stylesheet" href="/assets/stylesheets/obliques.css">
+    <link rel="stylesheet" href="/assets/stylesheets/selection.css">
+    <link rel="stylesheet" href="/assets/stylesheets/toc.css">
+    <link rel="stylesheet" href="/assets/stylesheets/alerts.css">
+    <link rel="stylesheet" href="/assets/stylesheets/share-buttons.css">
+    <link rel="stylesheet" href="/assets/stylesheets/matrix-effect.css">
+    
+    <!-- Fira Code font with ligatures -->
+    <link rel="stylesheet" href="/assets/fonts/FiraCode/fira_code.css">
+
+    <!-- Title text hack effect -->
+    <script defer src="/assets/js/text-hack-effect.js"></script>
+
+    <!-- Matrix effect -->
+    <script defer src="/assets/js/matrix-effect.js"></script>
+
+    <!-- Plausible Analytics -->
+    <script defer data-domain="elliotkillick.com" src="https://ping.elliotkillick.com/js/ping.js"></script>
+
+    <!-- Improve third-party resource loading performance -->
+    <link rel="preconnect" href="https://platform.twitter.com">
+
+    <!-- Lazy load Twitter embeds -->
+    <script defer src="/assets/js/lazy-twitter-embeds.js"></script>
+  </head>
+  <body id="top" class="sticky-footer">
+    {%- if config.extra.grid_size -%}
+    {%- set grid_size = config.extra.grid_size -%}
+    {%- else -%}
+    {%- set grid_size = 'grid-md' -%}
+    {%- endif -%}
+    <div id="page-wrapper">
+      {%- block header -%}
+          {{ header::header(grid_size=grid_size) }}
+      {%- endblock header -%}
+
+      <section id="start">
+        {%-  block main -%}
+        <section id="body-wrapper" class="section">
+          <section class="container {{ grid_size }}">
+            {%- block breadcrumbs -%}
+            {%- endblock breadcrumbs -%}
+
+            {%- if config.extra.sidebar.active -%}
+            <div class="columns">
+              <div id="item" class="column col-8 col-md-12 extra-spacing">
+                {%- block content -%}
+                <div class="blog-listing">
+                  {{ lists::list_pages(pages=paginator.pages) }}
+                </div>
+                {%- endblock content -%}
+              </div>
+	      <!-- MY EDIT -->
+	      <!-- Don't use display: block (default) otherwise sticky sidebars won't work -->
+              <div id="sidebar" class="column col-4 col-md-12">
+                <div class="sidebar-content">
+                  {% if config.extra.sidebar.author_bio %}
+                  {{ sidebar::author_bio(
+                  content=config.extra.sidebar.author_bio,
+                  avatar=config.extra.sidebar.author_avatar
+                  ) }}
+		  {% endif %}{# ./if author_bio #}
+		  <!-- MY EDIT -->
+		  <!-- Table of contents sidebar -->
+                  {% if page.extra.toc -%}
+                    {{ toc::generate(page=page, sidebar=true) }}
+		  {% endif -%}
+                  {% if config.extra.sidebar.text_snippet -%}
+                    {{ sidebar::text_snippet(content=config.extra.sidebar.text_snippet) }}
+                  {% endif -%}
+                  {% if config.extra.sidebar.tweets_by -%}
+                    {{ sidebar::tweets_by(id=config.extra.sidebar.tweets_by) }}
+                  {% endif -%}
+                  {% if config.extra.sidebar.popular_tags -%}
+                    {{ sidebar::popular_tags() }}
+                  {% endif -%}
+                  {% if config.extra.sidebar.archives -%}
+                    {{ sidebar::archives() }}
+                  {% endif -%}
+                  {% if config.generate_feed -%}
+                    {{ sidebar::syndicate() }}
+                  {% endif -%}
+                </div><!--./sidebar-content-->
+                <!-- MY EDIT -->
+		<!-- Table of contents sticky sidebar -->
+		<!-- We have to put it outside of the sidebar-content div because sticky doesn't work when it's inside of that "display: block" (browser default) div -->
+		<!-- We could change that div to make it "display: flex/grid" but then we have a different problem with the Twitter embed expanding width-wise when the site is in mobile view and never shrinking back to its original size when the site returns to a desktop view (you just have to shrink/expand the website width-wise quickly to trigger this bug)-->
+		<!-- The only fix I found for this (at least without using some fancy Javascript to fix the Twitter embed style which I've confirmed is the root cause of the issue) is to put this element outside of the sidebar-content div -->
+                {% if page.extra.toc -%}
+                  {{ toc::generate(page=page, sidebar=true, sticky=true) }}
+                {% endif -%}
+              </div>
+            </div>
+            {% else %}
+            <div id="item" class="blog-listing">
+            {%- block content -%}
+              {{ lists::list_pages() }}
+            {%- endblock content -%}
+            </div>
+            {%- endif -%}{# sidebar active? #}
+          </section>
+        </section>
+        {%- endblock main -%}
+      </section>
+
+      {%- block postcontent -%}
+      {{ pagination::paginate(grid_size=grid_size) }}
+      {%- endblock postcontent -%}
+    </div><!-- ./page-wrapper -->
+
+    {{ menu::mobile() }}
+
+    {%- block footer -%}
+      {{ footer::footer(grid_size=grid_size) }}
+    {%- endblock footer -%}
+
+    {%- block mobile -%}
+      {# TODO #}
+    {%- endblock mobile -%}
+  </body>
+</html>

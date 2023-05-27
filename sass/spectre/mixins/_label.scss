@@ -1,0 +1,13 @@
+// Label base style
+@mixin label-base() {
+  border-radius: $border-radius;
+  // MY EDIT
+  // Don't make code line height different from the rest of the text
+  //line-height: 1.25;
+  padding: .1rem .2rem;
+}
+
+@mixin label-variant($color: $light-color, $bg-color: $primary-color) {
+  background: $bg-color;
+  color: $color;
+}

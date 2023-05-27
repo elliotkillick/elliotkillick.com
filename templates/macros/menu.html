@@ -1,0 +1,95 @@
+{% macro items(menu) %}
+{%- set num = menu | length -%}
+{# Check if there are menu items to render, yes if > 0 #}
+
+{% if num > 0 -%}
+<ul>
+  <!-- MY EDIT -->
+  <!-- Fancy blinking terminal cursor whoami navbar -->
+  {%- for menu_item in menu -%}
+    {% if menu_item.name != "whoami" %}
+      <li>
+        <a href="{{ get_url(path=menu_item.url) }}">{{ menu_item.name }}</a>
+      </li>
+    {% else %}
+      <li>
+        <a href="{{ get_url(path=menu_item.url) }}">
+          <span class='logo'>
+            <span class='logo__mark'>&gt;</span>
+            <span class='logo__text'>whoami</span>
+            <span class='logo__cursor'></span>
+          </span>
+          <!-- MY EDIT -->
+          <!-- Load hack as early as possible to reduce noticeable layout shift -->
+          <script src="/assets/js/consolas-font-hack.js"></script>
+	</a>
+      </li>
+    {% endif %}
+  {%- endfor-%}
+</ul>
+{% endif %}
+{% endmacro items %}
+
+{% macro mobile_items(menu) %}
+{%- set num = menu | length -%}
+{# Check if there are menu items to render, yes if > 0 #}
+
+{% if num > 0 -%}
+<ul class="tree treemenu treemenu-root">
+  {%- for menu_item in menu -%}
+    <li class="tree-empty">
+      <span class="toggler"></span>
+      <!-- MY EDIT -->
+      <!-- Fancy blinking terminal cursor whoami hamburger menu -->
+      {% if menu_item.name != "whoami" %}
+        <a href="{{ get_url(path=menu_item.url) }}">{{ menu_item.name }}</a>
+      {% else %}
+        <a href="{{ get_url(path=menu_item.url) }}">
+          <span class='logo'>
+            <span class='logo__mark'>&gt;</span>
+            <span class='logo__text'>whoami</span>
+            <span class='logo__cursor'></span>
+          </span>
+          <!-- MY EDIT -->
+          <!-- Load hack as early as possible to reduce noticeable layout shift -->
+          <script src="/assets/js/consolas-font-hack.js"></script>
+        </a>
+    {% endif %}
+    </li>
+  {%- endfor-%}
+</ul>
+{% endif %}
+{% endmacro items %}
+
+{% macro home() %}
+<a class="site-logo" href="{{ config.base_url }}">
+  {% if config.title %}
+  <!-- MY EDIT -->
+  <!-- Custom font & switch from span to h1 tag -->
+  <!-- Putting the title in an h1 tag is recommended for for SEO purposes -->
+  <!-- All the attributes after font-family are just for overriding the h1 styles (so it displays the same as if it were in a span). The "color" attribute is the same one that would have been inherited from the site-logo class -->
+  <h1 style="font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif, system-ui; font-size: 16px; font-weight: 700; line-height: 1; margin: 0; display: inline">{{ config.title }}</h1>
+  {% else %}
+  <span>Zhuia</span>
+  {% endif %}
+</a>
+{% endmacro home %}
+
+{% macro mobile() %}
+<div class="mobile-container">
+        <div class="overlay" id="overlay">
+            <div style="padding: 1rem;">
+              {{ menu::home() }}
+            </div>
+            <nav class="overlay-menu">
+              {% if config.extra.main_menu -%}
+                {{ menu::mobile_items(menu=config.extra.main_menu) }}
+              {% endif -%}
+            </nav>
+        </div>
+    </div>
+
+    <!-- MY EDIT -->
+    <!-- Remove inline JavaScript from /templates/macros/menu.html for the CSP -->
+    <script type="text/javascript" src="/assets/js/menu.js"></script>
+{% endmacro mobile %}

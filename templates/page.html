@@ -1,0 +1,18 @@
+{% import "macros/pagination_page.html" as pagination_page -%}
+{% extends "index.html" -%}
+
+{%- block title %}
+    <title>{{ page.title }} | {{  config.title }}</title>
+{%- endblock title -%}
+
+{%- block breadcrumbs -%}
+{{ breadcrumbs::breadcrumbs(page=page) }}
+{%- endblock breadcrumbs -%}
+
+{%- block content -%}
+{{ posts::card(page=page, full=true) }}
+{%- endblock content -%}
+
+{%- block postcontent -%}
+{{ pagination_page::paginate(grid_size=grid_size) }}
+{%- endblock postcontent -%}

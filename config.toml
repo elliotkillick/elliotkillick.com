@@ -1,0 +1,88 @@
+# The URL the site will be built for
+base_url = "/"
+#base_url = "elliotkillick.com"
+
+title = "Elliot on Security"
+description = "Information security and hacking blog"
+
+# Whether to generate a RSS feed automatically
+generate_feed = true
+feed_filename = "rss.xml"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+# Built in taxonomies of huia.
+taxonomies = [
+           {name = "tags"},
+           {name = "categories"},
+]
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+# Choose a theme from:
+# https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting
+highlight_code = true
+highlight_theme = "material-light"
+
+[extra]
+# The max-width of the page content
+grid_size = "grid-lg"
+
+# Default author for articles
+author = "Elliot Killick"
+
+show_author = true
+show_tags = true
+show_categories = true
+read_more_prompt = "Read more"
+read_post_prompt = "Read post"
+
+# Menu
+hamburger_menu = true
+
+# Menu items to display. You define a url and the name of the menu item.
+# NOTE: `$BASE_URL/` must be included in the url name.
+main_menu = [
+              {url="/uses", name="Uses"},
+              {url="/cves", name="CVEs"},
+              {url="/whoami", name="whoami"},
+]
+
+# Footer
+#footer_tagline = ""
+
+# Social media buttons to display. You define a url and the name of the platform.
+social_links = [
+    {url = "https://github.com/ElliotKillick", name = "github"},
+    {url = "https://twitter.com/ElliotKillick", name = "twitter"},
+    {url = "https://www.youtube.com/@ElliotKillick", name = "youtube"},
+]
+
+twitter_user="@ElliotKillick"
+
+[extra.sidebar]
+# Enable/Disable sidebar
+active=true
+
+# Include a text snippet in the sidebar
+# You can format it with HTML
+text_snippet="<strong>Hi, I'm Elliot!</strong> Welcome to my <a href='/' >blog</a> dedicated to teaching you <i>everything</i> I know about the world of 'hacking' and information security. Through my content, you can expect to see me sharing all my techniques, '<mark>tricks of the trade</mark>', and security research. Plus, bringing you along for the journey while I also learn more about the craft. Be notified of new findings first by following my RSS/email feed, Twitter, and GitHub!"
+
+# Author card
+author_bio = "Security engineer & researcher"
+author_avatar = "avatar.png"
+
+# Include search bar
+# TODO template
+
+# Embed twitter iframe in the sidebar
+tweets_by="ElliotKillick"
+
+popular_tags=false
+archive=false
+related_posts=false #TODO

@@ -1,0 +1,94 @@
+/* Share buttons */
+/* Source: https://github.com/renyuanz/leonids/tree/leonids-jekyll */
+
+.share-buttons ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.share-buttons ul li {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+.share-buttons ul li span {
+  display: none;
+}
+/* min-width is max-width + 1 taken from /templates/macros/logo.html:7 */
+@media only screen and (min-width: 841px) {
+  .share-buttons ul li span {
+    display: inline;
+    /* MY EDIT */
+    /* Add spacing between text and icon */
+    margin-left: 0.5em;
+   }
+}
+.twitter {
+  background-color: #77bcf1;
+  color: #fff;
+  border-color: #77bcf1;
+}
+.twitter:visited {
+  color: #fff;
+  border-color: #77bcf1;
+}
+.twitter:hover {
+  background-color: #fff;
+  color: #77bcf1;
+  border-color: #77bcf1;
+}
+.facebook {
+  background-color: #627aac;
+  color: #fff;
+  border-color: #627aac;
+}
+.facebook:visited {
+  color: #fff;
+  border-color: #627aac;
+}
+.facebook:hover {
+  background-color: #fff;
+  color: #627aac;
+  border-color: #627aac;
+}
+.hacker-news {
+  background-color: #f60;
+  color: #fff;
+  border-color: #f60;
+}
+.hacker-news:visited {
+  color: #fff;
+  border-color: #f60;
+}
+.hacker-news:hover {
+  background-color: #fff;
+  color: #f60;
+  border-color: #f60;
+}
+.reddit {
+  background-color: #5f99cf;
+  color: #fff;
+  border-color: #5f99cf;
+}
+.reddit:visited {
+  color: #fff;
+  border-color: #5f99cf;
+}
+.reddit:hover {
+  background-color: #fff;
+  color: #5f99cf;
+  border-color: #5f99cf;
+}
+.linkedin {
+  background-color: #0077b5;
+  color: #fff;
+  border-color: #0077b5;
+}
+.linkedin:visited {
+  color: #fff;
+  border-color: #0077b5;
+}
+.linkedin:hover {
+  background-color: #fff;
+  color: #0077B5;
+  border-color: #0077b5;
+}

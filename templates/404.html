@@ -1,0 +1,58 @@
+{% extends "index.html" -%}
+
+{%- block title %}
+    <title>Not Found | 404</title>
+{%- endblock title -%}
+
+{%- block og_preview -%}
+{# og_preview not desired here #}
+{%- endblock og_preview -%}
+
+{%- block content -%}
+<div class="post">
+  <div class="content-title text-center">
+    <h1 class="post-title">Not Found - 404 &nbsp;🤔</h1>
+    </div>
+
+    <div class="post-content">
+      <div style="display: flex; justify-content: center">
+        <p style="font-family: Courier; white-space: pre-wrap;">
+<span style="font-weight: bold"># ls -la</span>
+total 8
+drwx------  2 www-data www-data 4096 Jun 11 08:08 .
+drwxr-xr-x 20 www-data www-data 4096 May  9 11:52 ..
+</p>
+      </div>
+      No dice! Maybe changing directories to one of these pages can help you find what you were looking for:
+      {# Check if there are menu items to render, yes if > 0 #}
+      {%- set num = config.extra.main_menu | length -%}
+      <ul>
+        <li><a href="/">Homepage</a></li>
+          
+        {% if num > 0 -%}
+          <!-- MY EDIT -->
+          <!-- Don't print fancy blinking terminal cursor for whoami here -->
+          {%- set menu = config.extra.main_menu -%}
+	  {%- for menu_item in menu -%}
+            <li><a href="{{ get_url(path=menu_item.url) }}">
+            {% if menu_item.name != "whoami" %}
+              {{ menu_item.name }}
+            {% else %}
+              whoami
+            {% endif %}
+            </a></li>
+          {%- endfor-%}
+        {% endif %}
+      </ul>
+
+    {% if config.extra.ddg_search %}
+    <p>
+      Otherwise, you can search all over the website from the search bar up here.
+    </p>
+
+    <!-- div class="search-container">{# TODO #}</div --> 
+
+    {% endif %}{# ./if ddg_search #}
+    </div>
+</div>
+{%- endblock content -%}

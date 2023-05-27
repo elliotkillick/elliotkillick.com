@@ -1,0 +1,20 @@
+// Core variables and mixins
+@import 'theme/variables';
+@import 'spectre/mixins';
+
+@import 'theme/mixins';
+@import 'theme/framework';
+@import 'theme/mobile';
+
+@import 'theme/header';
+@import 'theme/footer';
+@import 'theme/menu';
+
+@import 'theme/blog';
+@import 'theme/main';
+@import 'theme/icons';
+
+// MY EDIT
+// Dark mode theme
+// Compile this into theme CSS to ensure there won't be a blink of light mode before dark mode loads
+@import 'theme/dark-mode';

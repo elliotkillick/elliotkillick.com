@@ -1,0 +1,6 @@
+Using this web server only works on a VPS. Netlify runs their own HTTP servers (as part of their "global edge network") and having your own HTTP server isn't supported.
+    - https://answers.netlify.com/t/support-guide-can-i-run-a-web-server-http-listener-and-or-database-at-netlify/3078
+        - Jamstack started as a marketing term coined by the CEO of Netlify in 2017, basically it just refers to static site generators (SSGs) and supporting "serverless" technologies. Other companies (like Cloudflare) have now adopted the term and it's become more mainstream
+        - Jamstack is still largely a marketing term (in my opinion) because it describes the practice of combining technologies which already existed long before it did
+
+Cloudflare has an equivalent service to this called Cloudflare Pages.

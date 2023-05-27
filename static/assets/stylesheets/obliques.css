@@ -1,0 +1,28 @@
+/*
+ * Firefox bug (I think) notice: For some reason specifying the "line-height" property with this may cause the text to jump down a pixel (on hover) then up again. This only happens on the first blog title in the listing (on the homepage) though. If I uncheck all "line-height" properties for that first title then it longer happens though. Also, the text contents themselves do not affect this. Weird...
+ * You probably won't even notice this unless you're look for it though so it's fine
+*/
+
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.card h1:hover,
+.card h2:hover,
+.card h3:hover,
+.card h4:hover,
+.card h5:hover,
+.card h6:hover {
+  -webkit-transform: skewX(-15deg);
+  -moz-transform: skewX(-15deg);
+  -o-transform: skewX(-15deg);
+  transform: skewX(-15deg);
+}

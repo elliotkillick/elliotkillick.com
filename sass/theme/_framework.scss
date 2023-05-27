@@ -1,0 +1,30 @@
+html {
+  height: 100%;
+}
+
+#body-wrapper {
+  .container {
+    padding: $vert-padding;
+  }
+
+  // Fixed Header solution
+  .header-fixed & {
+    padding-top: $header-height-large;
+  }
+}
+
+.header-fixed {
+  .hero + #start > #body-wrapper {
+    padding-top: 0;
+  }
+}
+
+section.section {
+  padding-left: $horiz-padding;
+  padding-right: $horiz-padding;
+  position: relative;
+}
+
+.overlay-light, .overlay-dark, .overlay-light-gradient, .overlay-dark-gradient {
+  z-index: 0;
+}

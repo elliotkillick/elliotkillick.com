@@ -1,0 +1,1334 @@
+/*
+                        _______
+                       /       \
+                      .==.    .==.
+                     ((  ))==((  ))
+                    / "=="    "=="\
+                   /____|| || ||___\
+       ________     ____    ________  ___    ___
+       |  ___  \   /    \   |  ___  \ |  |  /  /
+       |  |  \  \ /  /\  \  |  |  \  \|  |_/  /
+       |  |   )  /  /__\  \ |  |__/  /|  ___  \
+       |  |__/  /  ______  \|  ____  \|  |  \  \
+_______|_______/__/ ____ \__\__|___\__\__|___\__\____
+|  ___  \ |  ____/ /    \   |  ___  \ |  ____|  ___  \
+|  |  \  \|  |___ /  /\  \  |  |  \  \|  |___|  |  \  \
+|  |__/  /|  ____/  /__\  \ |  |   )  |  ____|  |__/  /
+|  ____  \|  |__/  ______  \|  |__/  /|  |___|  ____  \
+|__|   \__\____/__/      \__\_______/ |______|__|   \__\
+                https://darkreader.org
+*/
+
+/*! Dark reader generated CSS | Licensed under MIT https://github.com/darkreader/darkreader/blob/main/LICENSE */
+
+@media (prefers-color-scheme: dark) {
+
+/* User-Agent Style */
+html {
+    /* MY EDIT */
+    /*background-color: #191a1b !important;*/
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    /* MY EDIT */
+    /*background-color: #191a1b;*/
+}
+html, body {
+    border-color: #756c5e;
+    color: #ece8e2;
+}
+a {
+    color: #3992f8;
+}
+table {
+    border-color: #565c5d;
+}
+::placeholder {
+    color: #b5ada1;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #414403 !important;
+    color: #ece8e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #212324;
+    color: #aea699;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #464b4d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #595f61;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #4a4f51;
+}
+::-webkit-scrollbar-corner {
+    background-color: #191a1b;
+}
+
+/* Invert Style */
+.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) sepia(5%) !important;
+}
+
+/* Variables Style */
+:root {
+   --darkreader-neutral-background: #131516;
+   --darkreader-neutral-text: #dcd6cf;
+   --darkreader-selection-background: #054da5;
+   --darkreader-selection-text: #ece8e2;
+}
+
+/* Modified CSS */
+a {
+    background-color: transparent;
+}
+fieldset {
+    border-color: initial;
+}
+legend {
+    color: inherit;
+}
+summary {
+    outline-color: initial;
+}
+html {
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+    color: rgb(176, 167, 155);
+}
+a {
+    color: rgb(69, 158, 234);
+    outline-color: initial;
+    text-decoration-color: initial;
+}
+a:focus {
+    box-shadow: rgba(18, 84, 166, 0.2) 0px 0px 0px 0.1rem;
+}
+a:focus,
+a:hover,
+a:active,
+a.active {
+    color: rgb(84, 165, 235);
+    text-decoration-color: initial;
+}
+a:visited {
+    color: rgb(102, 175, 237);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: inherit;
+}
+abbr[title] {
+    border-bottom-color: initial;
+    text-decoration-color: initial;
+}
+kbd {
+    background-image: initial;
+    background-color: rgb(56, 63, 73);
+    color: rgb(232, 227, 221);
+}
+mark {
+    background-image: initial;
+    background-color: rgb(72, 51, 2);
+    color: rgb(176, 167, 155);
+    border-bottom-color: rgb(148, 106, 5);
+}
+blockquote {
+    border-left-color: rgb(55, 59, 61);
+}
+ul {
+    list-style-image: initial;
+}
+ol {
+    list-style-image: initial;
+}
+:lang(zh) ins,
+:lang(zh) u,
+:lang(ja) ins,
+:lang(ja) u,
+.lang-cjk ins,
+.lang-cjk u {
+    border-bottom-color: initial;
+    text-decoration-color: initial;
+}
+.table.table-striped tbody tr:nth-of-type(2n+1) {
+    background-image: initial;
+    background-color: rgb(28, 30, 31);
+}
+.table tbody tr.active,
+.table.table-striped tbody tr.active {
+    background-image: initial;
+    background-color: rgb(32, 34, 35);
+}
+.table.table-hover tbody tr:hover {
+    background-image: initial;
+    background-color: rgb(32, 34, 35);
+}
+.table td,
+.table th {
+    border-bottom-color: rgb(55, 59, 61);
+}
+.btn {
+    background-image: initial;
+    /* MY EDIT */
+    background-color: rgb(29, 30, 31) !important;
+    border-color: rgb(17, 77, 151);
+    color: rgb(69, 158, 234);
+    outline-color: initial;
+    text-decoration-color: initial;
+}
+.btn:focus {
+    box-shadow: rgba(18, 84, 166, 0.2) 0px 0px 0px 0.1rem;
+}
+.btn:focus,
+.btn:hover {
+    background-image: initial;
+    background-color: rgb(34, 36, 37);
+    border-color: rgb(17, 79, 156);
+    text-decoration-color: initial;
+}
+.btn:active,
+.btn.active {
+    background-image: initial;
+    background-color: rgb(20, 89, 175);
+    border-color: rgb(18, 82, 162);
+    color: rgb(232, 227, 221);
+    text-decoration-color: initial;
+}
+.btn.loading:active::after,
+.btn.active.loading::after {
+    border-bottom-color: rgb(51, 54, 56);
+    border-left-color: rgb(51, 54, 56);
+}
+.btn.btn-primary {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    border-color: rgb(17, 79, 156);
+    color: rgb(232, 227, 221);
+}
+.btn.btn-primary:focus,
+.btn.btn-primary:hover {
+    background-image: initial;
+    background-color: rgb(20, 92, 181);
+    border-color: rgb(18, 82, 162);
+    color: rgb(232, 227, 221);
+}
+.btn.btn-primary:active,
+.btn.btn-primary.active {
+    background-image: initial;
+    background-color: rgb(20, 91, 180);
+    border-color: rgb(18, 84, 165);
+    color: rgb(232, 227, 221);
+}
+.btn.btn-primary.loading::after {
+    border-bottom-color: rgb(51, 54, 56);
+    border-left-color: rgb(51, 54, 56);
+}
+.btn.btn-success {
+    background-image: initial;
+    background-color: rgb(45, 145, 56);
+    border-color: rgb(46, 148, 57);
+    color: rgb(232, 227, 221);
+}
+.btn.btn-success:focus {
+    box-shadow: rgba(45, 145, 56, 0.2) 0px 0px 0px 0.1rem;
+}
+.btn.btn-success:focus,
+.btn.btn-success:hover {
+    background-image: initial;
+    background-color: rgb(43, 138, 53);
+    border-color: rgb(47, 150, 58);
+    color: rgb(232, 227, 221);
+}
+.btn.btn-success:active,
+.btn.btn-success.active {
+    background-image: initial;
+    background-color: rgb(38, 122, 48);
+    border-color: rgb(48, 156, 60);
+    color: rgb(232, 227, 221);
+}
+.btn.btn-success.loading::after {
+    border-bottom-color: rgb(51, 54, 56);
+    border-left-color: rgb(51, 54, 56);
+}
+.btn.btn-error {
+    background-image: initial;
+    background-color: rgb(183, 71, 4);
+    border-color: rgb(187, 72, 4);
+    color: rgb(232, 227, 221);
+}
+.btn.btn-error:focus {
+    box-shadow: rgba(183, 71, 4, 0.2) 0px 0px 0px 0.1rem;
+}
+.btn.btn-error:focus,
+.btn.btn-error:hover {
+    background-image: initial;
+    background-color: rgb(175, 68, 4);
+    border-color: rgb(190, 74, 5);
+    color: rgb(232, 227, 221);
+}
+.btn.btn-error:active,
+.btn.btn-error.active {
+    background-image: initial;
+    background-color: rgb(154, 60, 4);
+    border-color: rgb(198, 76, 5);
+    color: rgb(232, 227, 221);
+}
+.btn.btn-error.loading::after {
+    border-bottom-color: rgb(51, 54, 56);
+    border-left-color: rgb(51, 54, 56);
+}
+.btn.btn-link {
+    background-image: initial;
+    background-color: transparent;
+    border-color: transparent;
+    color: rgb(69, 158, 234);
+}
+.btn.btn-link:focus,
+.btn.btn-link:hover,
+.btn.btn-link:active,
+.btn.btn-link.active {
+    color: rgb(84, 165, 235);
+}
+.btn.btn-clear {
+    background-image: initial;
+    background-color: transparent;
+    border-color: initial;
+    color: currentcolor;
+    text-decoration-color: initial;
+}
+.btn.btn-clear:focus,
+.btn.btn-clear:hover {
+    background-image: initial;
+    background-color: rgba(28, 30, 31, 0.5);
+}
+.form-input {
+    background-color: rgb(29, 30, 31);
+    background-image: none;
+    border-color: rgb(62, 67, 69);
+    color: rgb(176, 167, 155);
+    outline-color: initial;
+}
+.form-input:focus {
+    box-shadow: rgba(18, 84, 166, 0.2) 0px 0px 0px 0.1rem;
+    border-color: rgb(17, 77, 151);
+}
+.form-input::placeholder {
+    color: rgb(190, 183, 172);
+}
+.form-input-hint {
+    color: rgb(190, 183, 172);
+}
+.has-success .form-input-hint,
+.is-success + .form-input-hint {
+    color: rgb(94, 208, 105);
+}
+.has-error .form-input-hint,
+.is-error + .form-input-hint {
+    color: rgb(252, 124, 47);
+}
+.form-select {
+    border-color: rgb(62, 67, 69);
+    color: inherit;
+    outline-color: initial;
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+}
+.form-select:focus {
+    box-shadow: rgba(18, 84, 166, 0.2) 0px 0px 0px 0.1rem;
+    border-color: rgb(17, 77, 151);
+}
+.form-select:not([multiple]):not([size]) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='%23667189'%20d='M2%200L0%202h4zm0%205L0%203h4z'/%3E%3C/svg%3E");
+    background-color: rgb(29, 30, 31);
+}
+.form-checkbox input:focus + .form-icon,
+.form-radio input:focus + .form-icon,
+.form-switch input:focus + .form-icon {
+    box-shadow: rgba(18, 84, 166, 0.2) 0px 0px 0px 0.1rem;
+    border-color: rgb(17, 77, 151);
+}
+.form-checkbox input:checked + .form-icon,
+.form-radio input:checked + .form-icon,
+.form-switch input:checked + .form-icon {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    border-color: rgb(17, 77, 151);
+}
+.form-checkbox .form-icon,
+.form-radio .form-icon,
+.form-switch .form-icon {
+    border-color: rgb(62, 67, 69);
+}
+.form-checkbox .form-icon,
+.form-radio .form-icon {
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+}
+.form-checkbox input:active + .form-icon,
+.form-radio input:active + .form-icon {
+    background-image: initial;
+    background-color: rgb(32, 34, 35);
+}
+.form-checkbox input:checked + .form-icon::before {
+    border-color: rgb(51, 54, 56);
+}
+.form-checkbox input:indeterminate + .form-icon {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    border-color: rgb(17, 77, 151);
+}
+.form-checkbox input:indeterminate + .form-icon::before {
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+}
+.form-radio input:checked + .form-icon::before {
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+}
+.form-switch .form-icon {
+    background-image: initial;
+    background-color: rgb(59, 66, 78);
+}
+.form-switch .form-icon::before {
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+}
+.form-switch input:active + .form-icon::before {
+    background-image: initial;
+    background-color: rgb(28, 30, 31);
+}
+.input-group .input-group-addon {
+    background-image: initial;
+    background-color: rgb(28, 30, 31);
+    border-color: rgb(62, 67, 69);
+}
+.has-success .form-input,
+.form-input.is-success,
+.has-success .form-select,
+.form-select.is-success {
+    background-image: initial;
+    background-color: rgb(15, 42, 26);
+    border-color: rgb(45, 144, 56);
+}
+.has-success .form-input:focus,
+.form-input.is-success:focus,
+.has-success .form-select:focus,
+.form-select.is-success:focus {
+    box-shadow: rgba(45, 145, 56, 0.2) 0px 0px 0px 0.1rem;
+}
+.has-error .form-input,
+.form-input.is-error,
+.has-error .form-select,
+.form-select.is-error {
+    background-image: initial;
+    background-color: rgb(55, 22, 1);
+    border-color: rgb(182, 71, 4);
+}
+.has-error .form-input:focus,
+.form-input.is-error:focus,
+.has-error .form-select:focus,
+.form-select.is-error:focus {
+    box-shadow: rgba(183, 71, 4, 0.2) 0px 0px 0px 0.1rem;
+}
+.has-error .form-checkbox .form-icon,
+.form-checkbox.is-error .form-icon,
+.has-error .form-radio .form-icon,
+.form-radio.is-error .form-icon,
+.has-error .form-switch .form-icon,
+.form-switch.is-error .form-icon {
+    border-color: rgb(182, 71, 4);
+}
+.has-error .form-checkbox input:checked + .form-icon,
+.form-checkbox.is-error input:checked + .form-icon,
+.has-error .form-radio input:checked + .form-icon,
+.form-radio.is-error input:checked + .form-icon,
+.has-error .form-switch input:checked + .form-icon,
+.form-switch.is-error input:checked + .form-icon {
+    background-image: initial;
+    background-color: rgb(183, 71, 4);
+    border-color: rgb(182, 71, 4);
+}
+.has-error .form-checkbox input:focus + .form-icon,
+.form-checkbox.is-error input:focus + .form-icon,
+.has-error .form-radio input:focus + .form-icon,
+.form-radio.is-error input:focus + .form-icon,
+.has-error .form-switch input:focus + .form-icon,
+.form-switch.is-error input:focus + .form-icon {
+    box-shadow: rgba(183, 71, 4, 0.2) 0px 0px 0px 0.1rem;
+    border-color: rgb(182, 71, 4);
+}
+.has-error .form-checkbox input:indeterminate + .form-icon,
+.form-checkbox.is-error input:indeterminate + .form-icon {
+    background-image: initial;
+    background-color: rgb(183, 71, 4);
+    border-color: rgb(182, 71, 4);
+}
+.form-input:not(:placeholder-shown):invalid {
+    border-color: rgb(182, 71, 4);
+}
+.form-input:not(:placeholder-shown):invalid:focus {
+    box-shadow: rgba(183, 71, 4, 0.2) 0px 0px 0px 0.1rem;
+    background-image: initial;
+    background-color: rgb(55, 22, 1);
+}
+.form-input:not(:placeholder-shown):invalid + .form-input-hint {
+    color: rgb(252, 124, 47);
+}
+.form-input:disabled,
+.form-input.disabled,
+.form-select:disabled,
+.form-select.disabled {
+    background-color: rgb(32, 34, 35);
+}
+.form-input[readonly] {
+    background-color: rgb(28, 30, 31);
+}
+input:disabled + .form-icon,
+input.disabled + .form-icon {
+    background-image: initial;
+    background-color: rgb(32, 34, 35);
+}
+.form-switch input:disabled + .form-icon::before,
+.form-switch input.disabled + .form-icon::before {
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+}
+.label {
+    background-image: initial;
+    background-color: rgb(32, 34, 35);
+    color: rgb(167, 159, 145);
+}
+.label.label-primary {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    color: rgb(232, 227, 221);
+}
+.label.label-secondary {
+    background-image: initial;
+    background-color: rgb(34, 36, 37);
+    color: rgb(69, 158, 234);
+}
+.label.label-success {
+    background-image: initial;
+    background-color: rgb(45, 145, 56);
+    color: rgb(232, 227, 221);
+}
+.label.label-warning {
+    background-image: initial;
+    background-color: rgb(153, 111, 5);
+    color: rgb(232, 227, 221);
+}
+.label.label-error {
+    background-image: initial;
+    background-color: rgb(183, 71, 4);
+    color: rgb(232, 227, 221);
+}
+code {
+    color: rgb(215, 81, 88);
+    background-image: initial;
+    background-color: transparent;
+}
+.code {
+    color: rgb(176, 167, 155);
+}
+.code::before {
+    color: rgb(190, 183, 172);
+}
+.code code {
+    background-image: initial;
+    background-color: rgb(28, 30, 31);
+    color: inherit;
+}
+pre {
+    background-color: rgb(28, 30, 31) !important;
+}
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+    border-color: initial;
+}
+.figure .figure-caption {
+    color: rgb(159, 150, 135);
+}
+.navbar .navbar-brand {
+    text-decoration-color: initial;
+}
+.avatar {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    color: rgba(232, 227, 221, 0.85);
+}
+.avatar .avatar-icon,
+.avatar .avatar-presence {
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+}
+.avatar .avatar-presence {
+    background-image: initial;
+    background-color: rgb(59, 66, 78);
+    box-shadow: rgb(29, 30, 31) 0px 0px 0px 0.1rem;
+}
+.avatar .avatar-presence.online {
+    background-image: initial;
+    background-color: rgb(45, 145, 56);
+}
+.avatar .avatar-presence.busy {
+    background-image: initial;
+    background-color: rgb(183, 71, 4);
+}
+.avatar .avatar-presence.away {
+    background-image: initial;
+    background-color: rgb(153, 111, 5);
+}
+.avatar[data-initial]::before {
+    color: currentcolor;
+}
+.badge[data-badge]::after,
+.badge:not([data-badge])::after {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    box-shadow: rgb(29, 30, 31) 0px 0px 0px 0.1rem;
+    color: rgb(232, 227, 221);
+}
+.breadcrumb {
+    list-style-image: initial;
+}
+.breadcrumb .breadcrumb-item {
+    color: rgb(159, 150, 135);
+}
+.breadcrumb .breadcrumb-item:not(:last-child) a {
+    color: rgb(159, 150, 135);
+}
+.breadcrumb .breadcrumb-item:not(:first-child)::before {
+    color: rgb(159, 150, 135);
+}
+.bar {
+    background-image: initial;
+    background-color: rgb(32, 34, 35);
+}
+.bar .bar-item {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    color: rgb(232, 227, 221);
+}
+.bar-slider .bar-item:not(:last-child):first-child {
+    background-image: initial;
+    background-color: rgb(32, 34, 35);
+}
+.bar-slider .bar-slider-btn {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    border-color: initial;
+}
+.bar-slider .bar-slider-btn:active {
+    box-shadow: rgb(18, 84, 166) 0px 0px 0px 0.1rem;
+}
+.card {
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+    border-color: rgb(55, 59, 61);
+}
+.chip {
+    background-image: initial;
+    background-color: rgb(32, 34, 35);
+    text-decoration-color: initial;
+}
+.chip.active {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    color: rgb(232, 227, 221);
+}
+.empty {
+    background-image: initial;
+    background-color: rgb(28, 30, 31);
+    color: rgb(159, 150, 135);
+}
+.menu {
+    box-shadow: rgba(56, 63, 73, 0.3) 0px 0.05rem 0.2rem;
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+    list-style-image: initial;
+}
+.menu.menu-nav {
+    background-image: initial;
+    background-color: transparent;
+    box-shadow: none;
+}
+.menu .menu-item {
+    text-decoration-color: initial;
+}
+.menu .menu-item > a {
+    color: inherit;
+    text-decoration-color: initial;
+}
+.menu .menu-item > a:focus,
+.menu .menu-item > a:hover {
+    background-image: initial;
+    background-color: rgb(34, 36, 37);
+    color: rgb(69, 158, 234);
+}
+.menu .menu-item > a:active,
+.menu .menu-item > a.active {
+    background-image: initial;
+    background-color: rgb(34, 36, 37);
+    color: rgb(69, 158, 234);
+}
+.modal:target .modal-overlay,
+.modal.active .modal-overlay {
+    background-image: initial;
+    background-color: rgba(28, 30, 31, 0.75);
+}
+.modal.modal-lg .modal-overlay {
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+}
+.modal.modal-lg .modal-container {
+    box-shadow: none;
+}
+.modal-container {
+    box-shadow: rgba(56, 63, 73, 0.3) 0px 0.2rem 0.5rem;
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+}
+.modal-container .modal-header {
+    color: rgb(184, 176, 165);
+}
+.nav {
+    list-style-image: initial;
+}
+.nav .nav-item a {
+    color: rgb(159, 150, 135);
+    text-decoration-color: initial;
+}
+.nav .nav-item a:focus,
+.nav .nav-item a:hover {
+    color: rgb(69, 158, 234);
+}
+.nav .nav-item.active > a {
+    color: rgb(176, 167, 155);
+}
+.nav .nav-item.active > a:focus,
+.nav .nav-item.active > a:hover {
+    color: rgb(69, 158, 234);
+}
+.pagination {
+    list-style-image: initial;
+}
+.pagination .page-item a {
+    text-decoration-color: initial;
+}
+.pagination .page-item a:focus,
+.pagination .page-item a:hover {
+    color: rgb(69, 158, 234);
+}
+.pagination .page-item.active a {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    color: rgb(232, 227, 221);
+}
+.panel {
+    border-color: rgb(55, 59, 61);
+}
+.popover .card {
+    box-shadow: rgba(56, 63, 73, 0.3) 0px 0.2rem 0.5rem;
+    border-color: initial;
+}
+.step {
+    list-style-image: initial;
+}
+.step .step-item:not(:first-child)::before {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+}
+.step .step-item a {
+    color: rgb(69, 158, 234);
+    text-decoration-color: initial;
+}
+.step .step-item a::before {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    border-color: rgb(51, 54, 56);
+}
+.step .step-item.active a::before {
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+    border-color: rgb(17, 77, 151);
+}
+.step .step-item.active ~ .step-item::before {
+    background-image: initial;
+    background-color: rgb(37, 39, 40);
+}
+.step .step-item.active ~ .step-item a {
+    color: rgb(190, 183, 172);
+}
+.step .step-item.active ~ .step-item a::before {
+    background-image: initial;
+    background-color: rgb(37, 39, 40);
+}
+.tab {
+    border-bottom-color: rgb(55, 59, 61);
+    list-style-image: initial;
+}
+.tab .tab-item a {
+    border-bottom-color: transparent;
+    color: inherit;
+    text-decoration-color: initial;
+}
+.tab .tab-item a:focus,
+.tab .tab-item a:hover {
+    color: rgb(69, 158, 234);
+}
+.tab .tab-item.active a,
+.tab .tab-item a.active {
+    border-bottom-color: rgb(17, 77, 151);
+    color: rgb(69, 158, 234);
+}
+.toast {
+    background-image: initial;
+    background-color: rgba(56, 63, 73, 0.95);
+    border-color: rgb(114, 106, 93);
+    color: rgb(232, 227, 221);
+}
+.toast.toast-primary {
+    background-image: initial;
+    background-color: rgba(18, 84, 166, 0.95);
+    border-color: rgb(17, 77, 151);
+}
+.toast.toast-success {
+    background-image: initial;
+    background-color: rgba(45, 145, 56, 0.95);
+    border-color: rgb(45, 144, 56);
+}
+.toast.toast-warning {
+    background-image: initial;
+    background-color: rgba(153, 111, 5, 0.95);
+    border-color: rgb(178, 129, 6);
+}
+.toast.toast-error {
+    background-image: initial;
+    background-color: rgba(183, 71, 4, 0.95);
+    border-color: rgb(182, 71, 4);
+}
+.toast a {
+    color: rgb(232, 227, 221);
+    text-decoration-color: initial;
+}
+.tooltip::after {
+    background-image: initial;
+    background-color: rgba(56, 63, 73, 0.95);
+    color: rgb(232, 227, 221);
+}
+.text-primary {
+    color: rgb(69, 158, 234) !important;
+}
+a.text-primary:focus,
+a.text-primary:hover {
+    color: rgb(53, 148, 232);
+}
+a.text-primary:visited {
+    color: rgb(86, 166, 236);
+}
+.text-secondary {
+    color: rgb(182, 217, 245) !important;
+}
+a.text-secondary:focus,
+a.text-secondary:hover {
+    color: rgb(166, 209, 244);
+}
+a.text-secondary:visited {
+    color: rgb(199, 226, 247);
+}
+.text-gray {
+    color: rgb(190, 183, 172) !important;
+}
+a.text-gray:focus,
+a.text-gray:hover {
+    color: rgb(182, 174, 162);
+}
+a.text-gray:visited {
+    color: rgb(198, 192, 182);
+}
+.text-light {
+    color: rgb(232, 227, 221) !important;
+}
+a.text-light:focus,
+a.text-light:hover {
+    color: rgb(223, 218, 212);
+}
+a.text-light:visited {
+    color: rgb(236, 232, 226);
+}
+.text-dark {
+    color: rgb(176, 167, 155) !important;
+}
+a.text-dark:focus,
+a.text-dark:hover {
+    color: rgb(184, 176, 165);
+}
+a.text-dark:visited {
+    color: rgb(167, 159, 145);
+}
+.text-success {
+    color: rgb(94, 208, 105) !important;
+}
+a.text-success:focus,
+a.text-success:hover {
+    color: rgb(108, 211, 118);
+}
+a.text-success:visited {
+    color: rgb(82, 205, 95);
+}
+.text-warning {
+    color: rgb(255, 192, 33) !important;
+}
+a.text-warning:focus,
+a.text-warning:hover {
+    color: rgb(255, 197, 50);
+}
+a.text-warning:visited {
+    color: rgb(255, 197, 51);
+}
+.text-error {
+    color: rgb(252, 124, 47) !important;
+}
+a.text-error:focus,
+a.text-error:hover {
+    color: rgb(253, 135, 63);
+}
+a.text-error:visited {
+    color: rgb(252, 115, 33);
+}
+.bg-primary {
+    color: rgb(232, 227, 221);
+    background-image: initial !important;
+    background-color: rgb(18, 84, 166) !important;
+}
+.bg-secondary {
+    background-image: initial !important;
+    background-color: rgb(34, 36, 37) !important;
+}
+.bg-dark {
+    color: rgb(232, 227, 221);
+    background-image: initial !important;
+    background-color: rgb(56, 63, 73) !important;
+}
+.bg-gray {
+    background-image: initial !important;
+    background-color: rgb(28, 30, 31) !important;
+}
+.bg-success {
+    color: rgb(232, 227, 221);
+    background-image: initial !important;
+    background-color: rgb(45, 145, 56) !important;
+}
+.bg-warning {
+    color: rgb(232, 227, 221);
+    background-image: initial !important;
+    background-color: rgb(153, 111, 5) !important;
+}
+.bg-error {
+    color: rgb(232, 227, 221);
+    background-image: initial !important;
+    background-color: rgb(183, 71, 4) !important;
+}
+.text-hide {
+    background-image: initial;
+    background-color: transparent;
+    border-color: initial;
+    color: transparent;
+    text-shadow: none;
+}
+.text-assistive {
+    border-color: initial;
+}
+.divider[data-content]::after,
+.divider-vert[data-content]::after {
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+    color: rgb(190, 183, 172);
+}
+.divider {
+    border-top-color: rgb(49, 52, 54);
+}
+.divider-vert::before {
+    border-left-color: rgb(55, 59, 61);
+}
+.loading {
+    color: transparent !important;
+}
+.loading::after {
+    background-image: initial;
+    background-color: transparent;
+    border-color: transparent transparent rgb(17, 77, 151) rgb(17, 77, 151);
+}
+.mobile-logo svg path,
+.mobile-logo img path {
+    fill: rgb(232, 227, 221);
+}
+.mobile-menu .button_container.active .top {
+    background-image: initial;
+    background-color: rgb(25, 26, 27);
+}
+.mobile-menu .button_container.active .middle {
+    background-image: initial;
+    background-color: rgb(25, 26, 27);
+}
+.mobile-menu .button_container.active .bottom {
+    background-image: initial;
+    background-color: rgb(25, 26, 27);
+}
+.mobile-menu .button_container span {
+    background-image: initial;
+    background-color: rgb(18, 84, 166);
+    border-color: initial;
+}
+.overlay {
+    background-image: initial;
+    background-color: rgb(0, 0, 0);
+}
+.treemenu li {
+    list-style-image: initial;
+    background-image: initial;
+    background-color: rgba(84, 91, 109, 0.1);
+}
+.treemenu li a:hover,
+.treemenu li a:focus,
+.treemenu li a.active {
+    text-decoration-color: initial;
+    color: rgb(79, 163, 235) !important;
+}
+.search-mobile input {
+    background-image: initial;
+    background-color: rgba(84, 91, 109, 0.1);
+}
+#header {
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 30px 40px;
+}
+#header a {
+    color: rgb(184, 176, 165);
+}
+.header-dark #header:not(.scrolled) {
+    background-image: initial;
+    background-color: rgb(27, 28, 29);
+    color: rgb(232, 227, 221);
+}
+.header-dark #header:not(.scrolled) a {
+    color: rgba(232, 227, 221, 0.7) !important;
+}
+.header-dark #header:not(.scrolled) a.active {
+    color: rgb(232, 227, 221) !important;
+}
+.header-dark #header:not(.scrolled) .dropmenu ul ul a {
+    color: rgb(184, 176, 165) !important;
+}
+.header-dark #header:not(.scrolled) .logo svg path {
+    fill: rgb(232, 227, 221);
+}
+#footer {
+    color: rgb(190, 183, 172);
+}
+.dropmenu ul li a {
+    text-decoration-color: initial;
+}
+.dropmenu ul li a:hover,
+.dropmenu ul li a:focus,
+.dropmenu ul li a.active {
+    color: rgb(69, 158, 234) !important;
+}
+.dropmenu ul ul {
+    list-style-image: initial;
+    background-image: initial;
+    background-color: rgb(29, 30, 31);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
+}
+.card .label.tag {
+    color: rgb(184, 176, 165);
+    background-color: rgb(25, 26, 27);
+    border-color: rgb(71, 76, 78);
+    text-decoration-color: initial;
+}
+.card .post-meta {
+    color: rgb(190, 183, 172);
+}
+.blog-listing .card {
+    border-color: initial;
+    /* MY EDIT */
+    /*box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 45px -9px;*/
+    box-shadow: none;
+}
+.blog-listing .card:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 16px;
+}
+ul.taxonomy {
+    list-style-image: initial;
+}
+#sidebar ul.related-pages {
+    box-shadow: none;
+}
+#sidebar ul.related-pages li {
+    border-bottom-color: rgb(55, 59, 61);
+}
+#sidebar ul.related-pages li:last-child {
+    border-bottom-color: initial;
+}
+#sidebar ul.archives {
+    list-style-image: initial;
+}
+.sidebar-widget {
+    background-color: rgb(25, 26, 27);
+}
+.paginator {
+    background-image: linear-gradient(225deg,
+    rgb(18, 84, 166) 0%,
+    rgb(18, 82, 161) 65%,
+    rgb(1, 23, 57) 100%);
+    background-color: initial;
+}
+.paginator .page-item a {
+    color: rgb(236, 232, 226);
+}
+.paginator .page-item a:hover {
+    color: rgb(236, 232, 226);
+}
+.gg-calendar {
+    border-color: initial;
+}
+.gg-calendar::before {
+    background-image: initial;
+    background-color: currentcolor;
+}
+h1 .zola-anchor,
+h2 .zola-anchor,
+h3 .zola-anchor,
+h4 .zola-anchor,
+h5 .zola-anchor,
+h6 .zola-anchor {
+    text-decoration-color: initial;
+    border-bottom-color: transparent;
+}
+.gg-sun {
+    background-image: linear-gradient(currentcolor 4px,
+    rgba(0, 0, 0, 0) 0px),
+    linear-gradient(currentcolor 4px,
+    rgba(0, 0, 0, 0) 0px),
+    linear-gradient(currentcolor 4px,
+    rgba(0, 0, 0, 0) 0px),
+    linear-gradient(currentcolor 4px,
+    rgba(0, 0, 0, 0) 0px);
+    background-color: initial;
+    box-shadow: 0px 0px 0px 2px inset;
+    border-color: transparent;
+}
+.gg-sun::after,
+.gg-sun::before {
+    border-right-color: initial;
+    border-left-color: initial;
+}
+.gg-moon {
+    border-top-color: initial;
+    border-right-color: initial;
+    border-left-color: initial;
+    border-bottom-color: transparent;
+}
+.gg-moon::after {
+    border-color: transparent;
+}
+.gg-home {
+    background-image: linear-gradient(to left,
+    currentcolor 5px,
+    rgba(0, 0, 0, 0) 0px),
+    linear-gradient(to left,
+    currentcolor 5px,
+    rgba(0, 0, 0, 0) 0px);
+    background-color: initial;
+    border-color: initial;
+}
+.gg-home::before {
+    border-top-color: initial;
+    border-left-color: initial;
+}
+.gg-home::after {
+    border-color: initial;
+}
+.logo {
+    text-decoration-color: initial;
+}
+.logo__cursor {
+    background-image: initial;
+    background-color: rgb(151, 4, 48);
+}
+::selection {
+    background-image: initial;
+    background-color: rgb(72, 51, 2);
+}
+.toc-tabs {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 4px -2px;
+}
+.toc-tab-label {
+    background-image: initial;
+    background-color: rgb(25, 26, 27) !important;
+}
+@media (hover: hover) {
+    .toc-tab-label:hover {
+        background-image: initial;
+        background-color: rgb(39, 41, 43) !important;
+    }
+}
+.toc-tab-content {
+    background-image: initial;
+    background-color: rgb(25, 26, 27) !important;
+}
+@media (hover: none) {
+    input:checked + .toc-tab-label {
+        background-image: initial;
+        background-color: rgb(39, 41, 43) !important;
+    }
+}
+.alert-success {
+    border-color: rgb(56, 61, 62) rgb(56, 61, 62) rgb(56, 61, 62) rgb(9, 207, 145);
+    background-color: rgb(9, 67, 37);
+}
+.alert-info {
+    border-color: rgb(56, 61, 62) rgb(56, 61, 62) rgb(56, 61, 62) rgb(9, 174, 191);
+    background-color: rgb(1, 30, 69);
+}
+.alert-warning {
+    border-color: rgb(56, 61, 62) rgb(56, 61, 62) rgb(56, 61, 62) rgb(161, 106, 10);
+    background-color: rgb(75, 45, 2);
+}
+.alert-danger {
+    border-color: rgb(56, 61, 62) rgb(56, 61, 62) rgb(56, 61, 62) rgb(151, 32, 38);
+    background-color: rgb(68, 1, 8);
+}
+.share-buttons ul {
+    list-style-image: initial;
+}
+.twitter {
+    background-color: rgb(17, 78, 125);
+    color: rgb(236, 232, 226);
+    border-color: rgb(18, 81, 130);
+}
+.twitter:visited {
+    color: rgb(236, 232, 226);
+    border-color: rgb(18, 81, 130);
+}
+.twitter:hover {
+    background-color: rgb(25, 26, 27);
+    color: rgb(120, 188, 236);
+    border-color: rgb(18, 81, 130);
+}
+.facebook {
+    background-color: rgb(70, 88, 126);
+    color: rgb(236, 232, 226);
+    border-color: rgb(62, 79, 112);
+}
+.facebook:visited {
+    color: rgb(236, 232, 226);
+    border-color: rgb(62, 79, 112);
+}
+.facebook:hover {
+    background-color: rgb(25, 26, 27);
+    color: rgb(116, 146, 177);
+    border-color: rgb(62, 79, 112);
+}
+.hacker-news {
+    background-color: rgb(201, 84, 5);
+    color: rgb(236, 232, 226);
+    border-color: rgb(176, 73, 4);
+}
+.hacker-news:visited {
+    color: rgb(236, 232, 226);
+    border-color: rgb(176, 73, 4);
+}
+.hacker-news:hover {
+    background-color: rgb(25, 26, 27);
+    color: rgb(252, 120, 31);
+    border-color: rgb(176, 73, 4);
+}
+.reddit {
+    background-color: rgb(44, 90, 132);
+    color: rgb(236, 232, 226);
+    border-color: rgb(41, 84, 123);
+}
+.reddit:visited {
+    color: rgb(236, 232, 226);
+    border-color: rgb(41, 84, 123);
+}
+.reddit:hover {
+    background-color: rgb(25, 26, 27);
+    color: rgb(109, 164, 207);
+    border-color: rgb(41, 84, 123);
+}
+.linkedin {
+    background-color: rgb(5, 95, 141);
+    color: rgb(236, 232, 226);
+    border-color: rgb(7, 132, 196);
+}
+.linkedin:visited {
+    color: rgb(236, 232, 226);
+    border-color: rgb(7, 132, 196);
+}
+.linkedin:hover {
+    background-color: rgb(25, 26, 27);
+    color: rgb(85, 194, 250);
+    border-color: rgb(7, 132, 196);
+}
+
+/* Override Style */
+.vimvixen-hint {
+    background-color: #7a5400 !important;
+    border-color: #d8b11a !important;
+    color: #f6eac9 !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #123a47 !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #052028 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #0a0a0a !important;
+}
+.tou-uknfeu {
+    background-color: #231604 !important;
+}
+.tou-6i3zyv {
+    background-color: #1d576a !important;
+}
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+
+}

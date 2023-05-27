@@ -1,0 +1,11 @@
+/* Highlighter selection color */
+
+/* For some reason Chromium doesn't accept combining these selectors */
+
+::selection {
+  background: #ffe9b3;
+}
+
+::-moz-selection {
+  background: #ffe9b3;
+}

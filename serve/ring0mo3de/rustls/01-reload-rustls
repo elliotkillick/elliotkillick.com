@@ -1,0 +1,4 @@
+#!/bin/sh
+# /etc/letsencrypt/renewal-hooks/deploy/01-reload-rustls
+
+pkill -HUP serve

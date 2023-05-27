@@ -1,0 +1,3 @@
+I made this for the purpose of learning Rust and to work as a substitute until I implemented email newsletters.
+
+It's service is no longer needed but I'll keep the code here for anyone interested. Feel free to do anything you want with it (0BSD license).

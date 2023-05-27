@@ -1,0 +1,37 @@
+// Codes
+code {
+  @include label-base();
+  @include label-variant($code-color, lighten($code-color, 42.5%));
+  font-size: 85%;
+  /* MY EDIT */
+  /* Remove #fcf2f2 code background color */
+  background: transparent;
+  /* MY EDIT */
+  /* Fix multi-line code blocks showing up with only the first line indented a little bit (while also not breaking inline code) */
+  display: inline-table;
+}
+
+.code {
+  border-radius: $border-radius;
+  color: $body-font-color;
+  position: relative;
+
+  &::before {
+    color: $gray-color;
+    content: attr(data-lang);
+    font-size: $font-size-sm;
+    position: absolute;
+    right: $layout-spacing;
+    top: $unit-h;
+  }
+
+  code {
+    background: $bg-color;
+    color: inherit;
+    display: block;
+    line-height: 1.5;
+    overflow-x: auto;
+    padding: 1rem;
+    width: 100%;
+  }
+}

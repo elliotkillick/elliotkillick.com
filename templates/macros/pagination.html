@@ -1,0 +1,22 @@
+{% macro paginate(grid_size) %}
+<section class="container {{ grid_size }}">
+<ul class="pagination paginator">
+  {% if paginator.previous %}
+  <li class="page-item page-prev">
+    <a href="{{ paginator.previous }}">
+      <span class="button__icon">←</span>
+      <div class="page-item-subtitle">Newer</div>
+    </a>
+  </li>
+  {% endif %}
+  {% if paginator.next %}
+  <li class="page-item page-next">
+    <a href="{{ paginator.next }}">
+      <span class="button__icon">→</span>
+      <div class="page-item-subtitle">Older</div>
+    </a>
+  </li>
+  {% endif %}
+</ul>
+</section>
+{% endmacro paginate %}

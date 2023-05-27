@@ -1,0 +1,13 @@
+Welcome!
+
+You've reached Elliot's testing and demo server.
+
+Currently, the only thing that exists on this server is Mimikatz which you can find at "/uploads/mimikatz.exe". Feel free to use this site for your own testing and demo purposes.
+
+It would be best for ring0mo.de to remain unflagged by AV web scanners, so please don't link directly to anywhere on this website besides this page. Also, please don't use the downloads on this website for any nefarious purposes or legitimate pentests. Binaries will not be kept up-to-date, and I cannot be held liable in either case (not to mention they may be missing DLLs).
+
+This website is powered by Actix, a blazingly fast, feature-rich and secure web framework written in Rust. Security provided by rustls, a modern, secure, and rusty TLS library. See the source code for this website on my GitHub.
+
+Infosec blog: elliotkillick3com (obfuscated, replace 3 for .)
+Twitter: twitter.com/3ElliotKillick3 (obfuscated, remove 3s)
+GitHub: github.com/3ElliotKillick3 (obfuscated, remove 3s)

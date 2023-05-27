@@ -1,0 +1,69 @@
+{% macro text_snippet(content) %}
+<div class="sidebar-widget">
+  {{ content | safe }}
+</div><!-- end text widget -->
+{% endmacro text_snippet %}
+
+{% macro tweets_by(id) %}
+<div class="sidebar-widget">
+<div class="tweets-by-wrapper" style="height: 600px;">
+<a class="twitter-timeline" data-height="600" href="https://twitter.com/{{ id }}?ref_src=twsrc%5Etfw">Tweets by @{{ id }}</a>
+<!-- MY EDIT -->
+</div>
+</div><!-- end twitter widget -->
+{% endmacro tweets_by %}
+
+{% macro popular_tags() %}
+{% endmacro popular_tags %}
+
+{% macro archives() %}
+{% endmacro archives %}
+
+{% macro syndicate() %}
+<div class="sidebar-widget syndicate">
+<!-- MY EDIT -->
+<!-- Change h4 to h1 with the size of an h4. This it to make Lighthouse happy by passing the test: -->
+<!-- Heading elements appear in a sequentially-descending order -->
+<h1 style="font-size: 1.2rem">Feeds</h1>
+<a class="btn" href="/{{ config.feed_filename }}" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rss-fill" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+</svg>
+<span>RSS</span>
+</a>
+
+<!-- MY EDIT-->
+<!-- Add newsletter signup -->
+<br />
+<br />
+
+<form action="https://ping.elliotkillick.com:8443/subscription/form">
+  <div style="display: flex">
+    <input class="btn" style="text-align: left; background: white; color: black; width: 70%; margin-right: 5px" type="text" name="email" placeholder="Email" >
+    <input class="btn" style="width: 30%; min-width: 90px" type="submit" value="Subscribe">
+  </div>
+</form>
+
+
+</div>
+{% endmacro syndicate %}
+
+{% macro author_bio(content, avatar) %}
+<div class="sidebar-widget">
+  <div class="tile">
+    <div class="tile-icon">
+      <figure class="avatar avatar-xl">
+        <img src="{{ get_url(path=avatar) }}" alt="author avatar image">
+      </figure>
+    </div>
+    <div class="tile-content">
+      <p class="tile-title" style="font-weight: 600;">{{ config.extra.author }}</p>
+      <!-- MY EDIT -->
+      <!-- Dividing line between sidebar bio name and content -->
+      <div style="border-bottom: 1px solid black; opacity: 0.40; width: 100%"></div>
+      <br />
+      <p class="tile-subtitle">{{ content }}</p>
+    </div>
+</div><!--./tile-->
+</div>
+{% endmacro author_card %}

@@ -1,0 +1,310 @@
+{% macro section_meta(section, author) %}
+    <div class="post-meta">
+        <span class="post-date">
+            {%- if section.extra["date"] -%}
+                {{ section.extra["date"] | date(format="%Y.%m.%d") }}
+                {# end of section.date if-check #}
+            {%- endif -%}
+        </span>
+
+        <span class="post-author">
+            {%- if author -%}
+                {{ utils::author(section=section) }}
+            {%- endif -%}
+        </span>
+    </div>
+{% endmacro section_meta %}
+
+<!-- MY EDIT -->
+<!-- Add social buttons next to author -->
+<!-- Pass in additional variable "full". This is so we can detect if a single post or a post listing is being displayed -->
+{% macro meta(page, author, full) %}
+    <div class="post-meta" style="display: inline-flex">
+        <span class="blog-date" style="display: inline-flex;">
+          <!-- MY EDIT -->
+	  <!-- Fix calendar alignment -->
+          <i class="gg-calendar" style="margin-right: 5px; margin-top: 3px;" title="Calendar"></i>
+          {%- if page.updated -%}
+	  <!-- MY EDIT -->
+	  <!-- Change date format -->
+          <time datetime="{{ page.updated | date(format="%Y-%m-%d") }}">
+          [Updated: {{ page.updated | date(format="%Y-%m-%d") }}]
+          </time>
+          {%- else -%}
+          <time datetime="{{ page.date | date(format="%Y-%m-%d") }}">
+          {{ page.date | date(format="%Y-%m-%d") }}
+          </time>
+          {%- endif -%}
+        </span>
+
+        {%- if author -%}
+	<!-- MY EDIT -->
+        <!-- Change "-" for a ring and fix spacing (with extra &nbsp; at the start) -->
+	<span style="margin-left: 0.5em; margin-right: 0.5em">
+          <svg width="10" height="10" stroke="currentColor" fill="none" stroke-width="1.5"><circle r="3" cx="5" cy="5"></circle></svg>
+        </span>
+        <span class="post-author">
+	  {{ utils::author(page=page) }}
+        </span>
+        <!-- MY EDIT -->
+        <!-- Add social buttons next to author -->
+        <!-- Only display social buttons when a single post is showing -->
+          {%- if full -%}
+            <span style="display: inline-flex">
+	    <!-- Add "aria-label" to pass "Links have a discernible name" Lighthouse test -->
+	    <!-- Add "title" too for text to be displayed when hovering over the button -->
+	    <!-- Select good "margin-right" value for passsing "Tap targets are sized appropriately" Lighthouse test -->
+            <a href="https://twitter.com/ElliotKillick" target="_blank" aria-label="Twitter" title="Twitter" style="margin-left: 0.45em; margin-right: 0.6em"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+            <a href="https://github.com/ElliotKillick" target="_blank" aria-label="GitHub" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            </span>
+          {%- endif -%}
+        {%- endif -%}
+    </div>
+{% endmacro meta %}
+
+{% macro taxonomies(taxonomy, disp_cat, disp_tag) %}
+
+    {% if disp_cat and disp_tag -%}
+        {% if taxonomy.categories -%}
+            {{ posts::categories(categories=taxonomy.categories) }}
+            {# end if-check for categories #}
+        {%- endif -%}
+
+        {% if taxonomy.tags -%}
+            {{ posts::tags(tags=taxonomy.tags) }}
+            {# end if-check for tags #}
+        {% endif -%}
+    {% elif disp_cat -%}
+        {% if taxonomy.categories-%}
+            {{ posts::categories(categories=taxonomy.categories) }}
+            {# end if-check for categories #}
+        {% endif -%}
+    {% elif disp_tag -%}
+        {% if taxonomy.tags -%}
+            {{ posts::tags(tags=taxonomy.tags) }}
+            {# end if-check for tags #}
+        {% endif -%}
+        {# end if-check for BOTH disp bools #}
+    {% endif -%}
+{% endmacro taxonomies %}
+
+{% macro categories(categories) %}
+    {%- for cat in categories -%}
+    <a class="label label-rounded label-secondary p-category" href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a>
+    {%- endfor -%}
+    {% endmacro categories %}
+
+{% macro tags(tags) %}
+    {% for tag in tags -%}
+        <a class="label label-rounded tag" href="{{get_taxonomy_url(kind="tags", name=tag )}}">#{{ tag }}</a>
+    {% endfor -%}
+{% endmacro tags %}
+
+{% macro parent_dir_rel_path(rel_path) %}
+  {%- set post_relative_path_array = rel_path | split(pat="/")  -%}
+  {%- set parent_dir_idx = post_relative_path_array | length - 1 -%}
+  {%- set_global parent_dir_path_array = [] -%}
+  {%- for el in post_relative_path_array %}{% if loop.index <= parent_dir_idx -%}
+  {%- set_global parent_dir_path_array = parent_dir_path_array | concat(with=el) -%}
+  {%- endif -%}
+  {%- endfor -%}
+  {{ parent_dir_path_array | join(sep="/") }}
+{% endmacro parent_dir_rel_path %}
+
+{% macro cover(page, image) %}
+{% if image is matching("[.](jpg|jpeg|png|gif)$") %}
+  {% set parent_dir_rel_path = posts::parent_dir_rel_path(rel_path=page.relative_path) | trim %}
+
+  {%- if lang == config.default_language %}
+      {% set imgpath = parent_dir_rel_path ~ "/" ~ image %}
+  {% else %}
+    {# TODO #}
+    {% set imgpath = parent_dir_rel_path ~ "/" ~ image %}
+    {# Alternative? I hope the first one will work with every case #}
+    {# set feature_image = page.components[1] ~ "/" ~ page.year ~ "/" ~ page.date ~ "-" ~ page.title ~ "/" ~ image #}
+  {% endif %}
+
+  {% set img300 = resize_image(path=imgpath, op='fill', width=300, height=150) %}
+  {% set img600 = resize_image(path=imgpath, op='fill', width=600, height=300) %}
+  {% set img900 = resize_image(path=imgpath, op='fill', width=900, height=450) %}
+  {% set img1200 = resize_image(path=imgpath, op='fill', width=1200, height=600) %}
+
+  <img
+  alt="{{ page.title | striptags }}"
+  class="post-cover
+        {% if page.extra.cover_classes %}
+        {{ page.extra.cover_classes | join(sep=' ') }}
+        {% endif %}
+  srcset="{{ img300.url | safe }} 300w,
+	  {{ img600.url | safe }} 600w,
+	  {{ img900.url | safe }} 900w,
+	  {{ img1200.url | safe }} 1200w,">
+  <!-- MY EDIT -->
+  <!-- Remove "sizes" parameter, I don't know what it's purpose was but it was making the picture take too small to fill the entire card width-wise on some resolutions -->
+{% elif image is matching("[.](svg)$") %}
+<img class="image" loading="lazy" alt="{{ page.title }}" src="{{ page.permalink }}{{ image }}">
+{% endif %}
+
+{% endmacro cover %}
+
+{% macro card(page, full) %}
+<div class="card">
+  {% if page.extra.cover_image %}
+  {% if page.extra.cover_image is matching("[.](jpg|jpeg|png|gif)$") %}
+  {% set parent_dir_rel_path = posts::parent_dir_rel_path(rel_path=page.relative_path) | trim %}
+  {% set imgpath = parent_dir_rel_path ~ "/" ~ page.extra.cover_image %}
+
+  {% set img300 = resize_image(path=imgpath, op='fill', width=300, height=150) %}
+  {% set img600 = resize_image(path=imgpath, op='fill', width=600, height=300) %}
+  {% set img900 = resize_image(path=imgpath, op='fill', width=900, height=450) %}
+  {% set img1200 = resize_image(path=imgpath, op='fill', width=1200, height=600) %}
+
+  <div class="card-image">
+      <!-- MY EDIT -->
+      <!-- Don't open image file upon click cover image -->
+      {%- if not full -%}<a href="{{ page.permalink }}">{% endif %}
+        <img
+          alt="{{ page.title | striptags }}"
+          class="post-cover
+                 {% if page.extra.cover_classes %}
+                 {{ page.extra.cover_classes | join(sep=' ') }}
+                 {% endif %}"
+          srcset="{{ img300.url | safe }} 300w,
+                  {{ img600.url | safe }} 600w,
+                  {{ img900.url | safe }} 900w,
+                  {{ img1200.url | safe }} 1200w,">
+	  <!-- MY EDIT -->
+	  <!-- Remove "sizes" parameter, I don't know what it's purpose was but it was making the picture take too small to fill the entire card width-wise on some resolutions -->
+      </a>
+    </div><!--./card-image-->
+    {% endif %}{# matching #}
+    {% endif %}{# cover_image #}
+
+    <div class="card-header">
+      {%- if not full -%}
+      <div class="card-subtitle text-gray">
+        <!-- MY EDIT -->
+        <!-- Pass in additional variable "full". This is so we can detect if a single post or a post listing is being displayed -->
+        {{ posts::meta(page=page, author=config.extra.show_author, full=full) }}
+      </div>
+      {%- endif -%}{# ./if not full #}
+      <div class="card-title" style="margin-top: .25rem;">
+        {%- if full -%}
+        <div class="text-center">
+          <h1 class="post-title">{{ page.title }}</h1>
+          <!-- MY EDIT -->
+          <!-- Pass in additional variable "full". This is so we can detect if a single post or a post listing is being displayed -->
+          {{ posts::meta(page=page, author=config.extra.show_author, full=full) }}
+        </div>
+        {%- else -%}
+        <!-- MY EDIT -->
+        <!-- Pass lighthouse test: -->
+        <!-- Heading elements are not in a sequentially-descending order -->
+	<!-- Swap h5 for h2 to fix this, correct "font-size" still be that of an h5 -->
+        <h2 class="post-title" style="font-size: 1rem"><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+        {%- endif -%}
+      </div>
+      <!-- MY EDIT -->
+      <!-- Add table of contents generation -->
+      <div class="card-toc">
+        {% if full %}
+          {% if page.extra.toc -%}
+            {{ toc::generate(page=page, sidebar=false) }}
+	  {% endif -%}
+	{% endif -%}
+      </div>
+    </div><!--./card-header-->
+
+    <div class="card-body">
+      {% if full %}
+        {{ page.content | safe }}
+        <div style="padding-top: 1em; border-top: 1px solid #ddd"></div>
+        <!-- MY EDIT -->
+        <!-- Add share buttons -->
+        <!-- Source: https://github.com/renyuanz/leonids/tree/leonids-jekyll -->
+	<!-- Use SVGs instead of font glyphs because browsers configured for high security will not load them (e.g. Tor Browser on Safer setting or iOS Safari browser on Lockdown mode -->
+        <style>
+          .no-i {
+            font-style: normal; 
+          }
+        </style>
+        <!-- The default .8rem just barely makes the buttons consume two lines -->
+        <div class="share-buttons">
+
+          <p style="margin-bottom: 0.2em">Share on:</p>
+          <!-- Icons credit: Font Awesome -->
+          <ul>
+            <li>
+              <a href="https://twitter.com/intent/tweet?text={{ current_url }}" class="twitter btn" title="Share on Twitter" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 1em; height: 1em; vertical-align: text-top; position: relative; top: 2px"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+              <span>Twitter</span></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ current_url }}" class="linkedin btn" title="Share on LinkedIn" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" style="width: 1em; height: 1em; vertical-align: text-top; position: relative; top: 1px"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+              <span>LinkedIn</span></a>
+            </li>
+            <li>
+              <a href="https://news.ycombinator.com/submitlink?u={{ current_url }}" class="hacker-news btn" title="Share on Hacker News" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" style="width: 1em; height: 1em; vertical-align: text-top; position: relative; top: 2px;"><path d="M0 32v448h448V32H0zm21.2 197.2H21c.1-.1.2-.3.3-.4 0 .1 0 .3-.1.4zm218 53.9V384h-31.4V281.3L128 128h37.3c52.5 98.3 49.2 101.2 59.3 125.6 12.3-27 5.8-24.4 60.6-125.6H320l-80.8 155.1z"/></svg>
+              <span>Hacker News</span></a>
+            </li>
+            <li>
+              <a href="https://www.reddit.com/submit?url={{ current_url }}" class="reddit btn" title="Share on Reddit" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 1em; height: 1em; vertical-align: text-top; position: relative; top: 2px"><path d="M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9 13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7 3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18 5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1 11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1 5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2 0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2 18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8 87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6 0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6 0-13.8-11-24.9-24.9-24.9z"/></svg>
+              <span>Reddit</span></a>
+            </li>
+	    <!--
+            <li>
+              <a href="https://www.facebook.com/sharer/sharer.php?u={{ current_url }}" class="facebook btn" title="Share on Facebook" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" style="width: 1em; height: 1em; vertical-align: text-top; position: relative; top: 1px"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+              <span>Facebook</span></a>
+            </li>
+	    -->
+          </ul>
+        </div><!--./share-buttons-->
+      {% else %}{# else show the card for listing #}
+        {% set show_read_more_btn = true %}
+
+      {%  if page.description -%}
+        {{ page.description }}
+      {% elif page.summary %}
+        {{ page.summary | striptags }}
+      {% else %}
+        {% set show_read_more_btn = false %}
+      {%  endif -%}{# ./if page.description #}
+      {% endif -%}{# endif full #}
+    </div><!--./card-body-->
+
+    <div class="card-footer">
+      <div class="columns">
+        <div class="column col-9 col-sm-7">
+          <div class="taxonomies text-left">
+            {{  posts::taxonomies(
+            taxonomy=page.taxonomies,
+            disp_cat=config.extra.show_categories,
+            disp_tag=config.extra.show_tags
+            ) }}
+          </div>
+        </div><!--./col-6-->
+        {% if not full %}
+        <div class="column col-3 col-sm-5" style="flex-direction: column-reverse;display: flex;">
+          {% if show_read_more_btn %}
+          <div style="flex-direction: column-reverse;display: flex;">
+            <!-- MY EDIT -->
+	    <!-- Change arrow and spacing -->
+            <a class="read-more btn btn-sm" href="{{ page.permalink }}">{{ config.extra.read_more_prompt }} &nbsp;➤</a>
+          </div>
+          {% else %}
+          <div style="flex-direction: column-reverse;display: flex;">
+            <!-- MY EDIT -->
+            <!-- Change arrow and spacing -->
+            <a class="read-more btn btn-sm" href="{{ page.permalink }}">{{ config.extra.read_post_prompt }} &nbsp;➤</a>
+          </div>
+          {% endif -%}
+        </div><!--./col6-->
+        {% endif %}{# ./if not full #}
+        </div><!--./columns-->
+    </div><!--./card-footer-->
+</div><!--./card-->
+{% endmacro card %}
