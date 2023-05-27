@@ -1,5 +1,7 @@
 {% macro paginate(grid_size) %}
-<section class="container {{ grid_size }}">
+<!-- MY EDIT -->
+<!-- Increase minimum padding applied for mobile -->
+<section class="container {{ grid_size }}" style="padding-left: 1rem; padding-right: 1rem;">
 <ul class="pagination paginator">
   {% if paginator.previous %}
   <li class="page-item page-prev">
