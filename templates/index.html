@@ -65,11 +65,10 @@
     <!-- The twitter embed was (under some circumstances) fetching content from HTTP links even when the endpoint supported HTTPS -->
     <!-- Help mitigate XSS by specifying where scripts can be loaded from -->
     <!-- Improve security and pass Lighthouse test -->
-    <!--
+    <!-- These policies must be disabled when serving locally (e.g. from "zola serve") -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Content-Security-Policy" content="object-src 'none'">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://ping.elliotkillick.com https://platform.twitter.com https://cdn.syndication.twimg.com">
-    -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://ping.elliotkillick.com https://elliotkillick-com.pages.dev https://platform.twitter.com https://cdn.syndication.twimg.com">
 
     <!-- Icons -->
     <!-- Thank you to https://realfavicongenerator.net for generating these -->
