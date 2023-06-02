@@ -18,7 +18,7 @@ date = 2022-06-24
 &ensp;&ensp;&ensp;&ensp;My open source software ([OSS](https://github.com/ElliotKillick)) has been used by thousands of people & I regularly share engaging educational content in the form of [blog posts](/) and [tweets](https://twitter.com/ElliotKillick). Interacting with people and answering any questions they may have to the best of my knowledge & experience on the content I've shared is something you will often find me doing. See my [CVEs](/cves) and [HackerOne](https://hackerone.com/ElliotKillick) for info on some of the software I've had an impact in securing.<br />
 &ensp;&ensp;&ensp;&ensp;I delight in open sourcing all the things (I have a whole back catalog of previously created tools and small projects I've been meaning to open source) and documenting my work thoroughly so others can learn from it.<br />
 
-I intend to start posting new content on my blog/Twitter/YouTube at least once per week!
+I intend to start posting new content on my blog/Twitter/YouTube/Twitch more than once per week!
 
 ## Current Focus
 
@@ -34,7 +34,7 @@ I'm currently working on multiple current and future open source projects as wel
 <script defer src="/assets/js/anti-spam.js"></script>
 
 <!-- Hopefully having the word "at" before and a "." after my email address confuses the spam bots too -->
-The fastest way you can get in touch with me is through my Twitter DMs. For professional inquiries (e.g. a partnership, sponsorship, paid mentorship or job referral), you can email me at <span class="top-secret"></span><noscript>[Please enable JavaScript to see email address]</noscript>. For confidential communications (e.g. a security finding), you can contact me at @ElliotKillick on Wire.
+The fastest way you can get in touch with me is through my Twitter DMs. For professional inquiries (e.g. a partnership, sponsorship, paid mentorship or referral for a position), you can email me at <span class="top-secret"></span><noscript>[Please enable JavaScript to see email address]</noscript>. For confidential communications (e.g. a security finding), you can contact me at @ElliotKillick on Wire.
 
 If there's something in particular that you want to see or want me to look into, feel free to let me know. Currently, I have over 50 pieces of content planned (30+ of those being blog posts) but I'll see what I can do.
 
