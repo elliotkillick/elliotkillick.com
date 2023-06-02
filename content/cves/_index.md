@@ -34,7 +34,9 @@ A bug in the the parsing of map (.BSP) files when connecting to an attacker-cont
 The bug (not disclosing details for now) causes a pointer to be tainted with data from an attacker-controlled BSP file. This pointer is later used as part of a virtual call thus allowing the attacker to redirect execution flow and eventually execute arbitrary code.
 
 Affects: Windows, Mac OSX, and Linux</br>
-CVSS: <span style="color: red; font-weight: bold">X</span><br />
+CVSS: <span style="font-weight: 800">* <span style="color: red; text-decoration: underline">10.0</span> *</span>
+
+<br />
 
 **This bug (while confirmed) is currently still being fixed by Valve.**
 
@@ -42,7 +44,12 @@ CVSS: <span style="color: red; font-weight: bold">X</span><br />
 
 **Lastly, I'll talk about how I created my first RCE exploit from practically no prior binary exploitation experience and give some ideas on how you could easily do the same thing. Additionally, all the tools I created along the way to assist exploitation efforts and greatly increase debugging productivity will be open sourced on GitHub.**
 
-[HackerOne Report](https://hackerone.com)
+{{ img(file="cves/h1-valve-screenshot.png") }}
+
+<br />
+<br />
+
+[HackerOne Report](https://hackerone.com/elliotkillick)
 
 <br />
 
