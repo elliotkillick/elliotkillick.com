@@ -84,7 +84,21 @@ $link-color-light: lighten($link-color, 10%) !default;
 // Use Cantarell font (the system-ui default on Linux, or at least Fedora)
 @font-face {
   font-family: "Cantarell";
-  src: url(/assets/fonts/Cantarell-Regular.otf);
+  src: url(/assets/fonts/Cantarell/Cantarell-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cantarell";
+  src: url(/assets/fonts/Cantarell/Cantarell-Bold.otf);
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cantarell";
+  src: url(/assets/fonts/Cantarell/Cantarell-ExtraBold.otf);
+  font-weight: 800;
+  font-style: normal;
 }
 // Move system-ui to the back of the list
 $base-font-family: Cantarell, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto !default;
