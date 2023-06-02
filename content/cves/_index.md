@@ -44,7 +44,7 @@ CVSS: <span style="font-weight: 800">* <span style="color: red; text-decoration:
 
 **Lastly, I'll talk about how I created my first RCE exploit from practically no prior binary exploitation experience and give some ideas on how you could easily do the same thing. Additionally, all the tools I created along the way to assist exploitation efforts and greatly increase debugging productivity will be open sourced on GitHub.**
 
-{{ img(file="cves/h1-valve-screenshot.png") }}
+{{ img(file="h1-valve-screenshot.png") }}
 
 <br />
 <br />
