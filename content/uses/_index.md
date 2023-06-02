@@ -13,8 +13,8 @@ All of the below software is open source (with minor noted exceptions) which acc
 ## Editor & Terminal
 
 - VSCodium (open source Visual Studio Code)
-- Ghostwriter markdown editor for maintaining some notes
-  - Minimal, works offline, and available in the official Debian repoisitories
+- MarkText as a markdown editor for note taking
+  - Ghostwriter if something that's available from official Debian repositories is required
 - wxHexEditor (built from source w/ patches) for viewing, editing and diffing binary data
 - Meld for diffing text files
 - diff for testing if files differ between folders
@@ -85,6 +85,8 @@ All of the below software is open source (with minor noted exceptions) which acc
 - Ghidra as a decompiler on Linux and Windows
 - Radare2 utilities
 - NASM as an x86 assembler and disassembler
+- American Fuzzy Lop (AFL) for fuzzing (depending on the target)
+- AFL and CERT BFF crash triaging tools
 - Tetrane REVEN (closed source) based on open source Platform for Architecture-Neutral Dynamic Analysis (PANDA)
 - Address Sanatizer to detect memory corruption (for when source code is available)
 - Valgrind (and the wider suite of tools) to detect memory corruption (for when no source is available)
