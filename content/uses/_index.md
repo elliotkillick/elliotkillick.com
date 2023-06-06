@@ -85,8 +85,8 @@ All of the below software is open source (with minor noted exceptions) which acc
 - Ghidra as a decompiler on Linux and Windows
 - Radare2 utilities
 - NASM as an x86 assembler and disassembler
-- American Fuzzy Lop (AFL) for fuzzing (depending on the target)
-- AFL and CERT BFF crash triaging tools
+- American Fuzzy Lop plus plus (AFL++) for fuzzing (depending on the target)
+- AFL++ and CERT BFF crash triaging tools
 - Tetrane REVEN (closed source) based on open source Platform for Architecture-Neutral Dynamic Analysis (PANDA)
 - Address Sanatizer to detect memory corruption (for when source code is available)
 - Valgrind (and the wider suite of tools) to detect memory corruption (for when no source is available)

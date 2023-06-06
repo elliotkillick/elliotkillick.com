@@ -23,7 +23,7 @@ This page documents all of my public significant security findings, primarily CV
     <path id="M" d="M 650.25347,35.70814 L 650.25347,26.78928 L 647.17375,33.28807 L 645.67809,33.28807 L 642.52743,26.78928 L 642.52743,35.70814 L 640.50472,35.70814 L 640.50472,22.36905 L 642.52743,22.36905 L 646.42458,30.66779 L 650.25347,22.36905 L 652.27327,22.36905 L 652.27327,35.70814 L 650.25347,35.70814 L 650.25347,35.70814 z"/>
 </svg>
 
-## Remote Code Execution in the Valve Source Engine (CVE 2023-XXXX)
+## Remote Code Execution in the Valve Source Engine (CVE-2023-XXXX)
 
 </div>
 
