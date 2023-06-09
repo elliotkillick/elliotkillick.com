@@ -46,6 +46,7 @@ All of the below software is open source (with minor noted exceptions) which acc
 - GIMP or Krita for photo editing
   - Occasionally, Photoshop (proprietary) in its own air-gapped Windows VM to use their selection algorithms for background removal
 - Kdenlive for video editing
+- OBS Studio for recording/streaming
 - ScreenToGif for recording GIFs on Windows
 - Byzanz for recording GIFs on Linux
   - Minimal (doesn't use FFmpeg; just X) and works
@@ -61,6 +62,8 @@ All of the below software is open source (with minor noted exceptions) which acc
 - strace for debugging program errors
   - Often my next step after increasing verbosity, checking logs, searching up the error message, and trying ideas fail
   - Reading/grepping source code or binary strings may come after this
+- Socat for connecting things together
+- Tinyproxy as a simple HTTP proxy server for use with Socat
 - Git
 - QDirStat
 - WinDirStat on Windows
