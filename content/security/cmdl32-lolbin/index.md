@@ -29,7 +29,7 @@ Sitting dormant for over a decade was a hidden feature of `Cmdl32.exe` that if e
 
 A lot of the technical details have already been covered well on [Adam's (Hexacorn's) blog post](https://www.hexacorn.com/blog/2017/04/30/the-archaeologologogology-3-downloading-stuff-with-cmdln32/) where he came incredibly close to discovering this [lolbin](https://github.com/LOLBAS-Project/LOLBAS/blob/master/README.md) himself. I won't duplicate any of what he said there so make sure you go give that a read.
 
-What I will be covering are the techniques I used to overcome the final three hurdles in reverse engineering and practical use of this lolbin that I (as well as Adam) faced so you can improve the caliber of your own reverse engineering skills and maybe help you find some lolbins yourself!
+What I will be covering are the techniques I used to overcome the final three hurdles in reverse engineering and practical use of this lolbin that I (as well as Adam) faced so you can improve the caliber of your own reverse engineering skills and maybe help you find some lolbins yourself! The tool we will be using to do this reverse engineering is [IDA (Interactive Disassembler) Free](https://hex-rays.com/ida-free/).
 
 ### Hurdle 1: The Final Argument
 
@@ -87,7 +87,7 @@ Immediately after this, `Cmdl32.exe` proceeds to use the Microsoft WinHTTP API t
 
 This is the pragmatic approach that would have had to be employed to successfully reverse engineer this part of the `Cmdl32.exe` downloader.
 
-Another approach would have just been to get all the program strings and try each one of them in an attempt to reach your desired code path (i.e. bruteforce). To do this, make sure you lower the "minimum string length" because the default of 5 in IDA (the Interactive Disassembler) would have hidden some of these options. This assumes that your configuration file (`settings.txt`) is already correct and you just need to figure out this last `/lan` option. Note that the strings approach will work with varying degress of success due to differences in how some programs store such data (e.g. some store the options as just `LAN` not `/LAN` making it more difficult to tell which strings in a binary are its potential arguments as opposed to just noise).
+Another approach would have just been to get all the program strings and try each one of them in an attempt to reach your desired code path (i.e. bruteforce). To do this, make sure you lower the "minimum string length" because the default of 5 in IDA would have hidden some of these options. This assumes that your configuration file (`settings.txt`) is already correct and you just need to figure out this last `/lan` option. Note that the strings approach will work with varying degress of success due to differences in how some programs store such data (e.g. some store the options as just `LAN` not `/LAN` making it more difficult to tell which strings in a binary are its potential arguments as opposed to just noise).
 
 {{ img(file="strings.png") }}
 
