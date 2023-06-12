@@ -122,6 +122,7 @@ All of the below software is open source (with minor noted exceptions) which acc
 - ChatGPT (closed source) as an assistant
 - Replit (closed) for temporarily deploying small projects with their convenient hosting
 - Fast.com (closed) for running Internet speed tests
+- SSL Labs (closed) for testing a website's level of TLS support
 - VirusTotal (closed) for running preliminary virus scans on files, URLs, etc.
 - Trello (**Absolutely Proprietary**) kanban boards for keeping track of my todo list and content creation pipeline
 
@@ -131,7 +132,7 @@ All of the below software is open source (with minor noted exceptions) which acc
 - Corsair Vengeance DDR3 32GB RAM (since upgrading from 12GB at the end of 2021)
 - Crucial MX500 1TB SSD (main system and VMs drive), WD Black 750GB HDD (VMs drive), Samsung 970 EVO Plus 2TB M.2 SSD (VMs drive, another recent addition), WD Black 2TB HDD (bulk storage drive), and a Seagate Portable 4TB external USB HDD (Qubes backup drive)
 - GeForce GTX 1050 Ti (for passing through to VMs)
-- Audio-Technica ATH M50X headphones w/ Antlion ModMic 4 microphone
+- SteelSeries Arctics 5 Headset
 - Logitech C922 Pro Stream Webcam
 - HyperX Alloy Core RGB Keyboard
 - Edimax N150 Wi-Fi 4 Nano USB Adapter for OpenBSD (supported by urtwn(4) driver in base)
