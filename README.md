@@ -34,7 +34,7 @@ JavaScript is optional for everything but the the menu on mobile devices and the
 
 SVGs or CSS is always used in place of font glyphs (with a TTF, OTF, or WOFF file) to create icons. This ensures browsers configured for high security such as Tor Browser on the "Safer"/"Safest" setting or iOS Safari on Lockdown mode have a good viewing experience. Custom fonts are disabled on these browsers due to the complex attack surface it exposes.
 
-I also own the domain elliotonsecurity.com (and eos.md; markdown, for short), however, for now the canonical domain remains elliotkillick.com. Additionally, I own the domain ring0mo3de (obfuscated due to hosting what web AVs and search engines would classify as malicious programs, replace "3" for ".") which I simply use for testing and demo purposes ([Source code](serve/ring0mo3de/src/main.rs)).
+I also own the domain elliotonsecurity.com (and eos.md; markdown, for short), however, for now the canonical domain remains elliotkillick.com. Additionally, I own the domain ring0mo3de (obfuscated due to hosting what web AVs and search engines would classify as malicious programs, replace "3" for ".") which I simply use for testing and demo purposes ([Source code](serve/ring0mo3de/rustls/src/main.rs)).
 
 [Plausible Analytics](https://plausible.io) is used for privacy friendly website analytics and you can find that hosted at ping.elliotkillick.com. This (non-Rust) service runs in a container to help ensure it stays isolated from the rest of the system.
 
