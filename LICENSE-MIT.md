@@ -1,4 +1,4 @@
-# Released under MIT License
+# MIT License
 
 Copyright (C) 2023 Elliot Killick <contact@elliotkillick.com>
 
