@@ -29,7 +29,7 @@ This page documents all of my public significant security findings, primarily CV
 
 The Source Engine is a game engine which powers many of the big name titles with daily user counts in the hundreds of thousands.
 
-A bug in the the parsing of map (.BSP) files when connecting to an attacker-controlled server (e.g. through a malicious website, Steam invite, or spoofing high player count on the community server list) could lead to arbitrary code execution on a victim's computer. The result is a full compromise of the remote computer at which point the attacker could install malware, spy on the user, move laterally through out the network to infect more hosts, and much more.
+A bug in the the parsing of map (.BSP) files when connecting to an attacker-controlled server (e.g. through a malicious website, Steam invite, or spoofing high player count on the community server list) could lead to arbitrary code execution on a victim's computer. The result is a full compromise of the remote computer at which point an attacker could install malware, move laterally through out the network to infect more hosts, and more.
 
 The bug (not disclosing details for now) causes a pointer to be tainted with data from an attacker-controlled BSP file. This pointer is later used as part of a virtual call thus allowing the attacker to redirect execution flow and eventually execute arbitrary code.
 
