@@ -58,7 +58,7 @@ In the above picture, `0x60` is in the `r9` register because we have both `/vpn`
 
 `/lan` (in the `r9` register) is converted from its hex identifier of `0x20` into a boolean value (false or `0x0`; in this case meaning that `/vpn` is not on its own but is used with `/lan`) by performing a [bit shift](https://en.wikipedia.org/wiki/Bitwise_operation#Logical_shift) (`shr` instruction in the image) operation. The `r9` register is then passed as the fourth argument to `UpdateVpnFileForProfile`:
 
-Function signature (not including the return value): `UpdateVpnFileForProfile(char const *, char const *, CmLogFile *, int)`
+[Function signature](https://en.wikipedia.org/wiki/Type_signature#Method_signature): `UpdateVpnFileForProfile(char const *, char const *, CmLogFile *, int)`
 
 {{ img(file="bit-shift-lan-argument.png") }}
 
