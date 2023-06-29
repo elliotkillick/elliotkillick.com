@@ -4,7 +4,7 @@ description="How you could have found it yourself and how it went undetected for
 date=2023-06-29
 [taxonomies]
 categories = ["lolbin"]
-tags = ["windows"]
+tags = ["windows", "technical"]
 
 [extra]
 cover_image="cover.png"
