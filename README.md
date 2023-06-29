@@ -42,9 +42,9 @@ The only non-Rust web component that can reasonably be ported to Rust is the Ngi
 
 ## Licensing
 
-**HTML and CSS/SASS including (but not limited to) everything under the `templates`, `sass`, and `static/assets/stylesheets` directories has [all rights reserved](LICENSE-RESERVED). You cannot use these file types or the files within these directories in any way except to read and learn from them.**
+**HTML and CSS/SASS including (but not limited to) everything under the `templates`, `sass`, and `static/assets/stylesheets` directories has [all rights reserved](LICENSE-RESERVED.md). You cannot use these file types or the files within these directories in any way except to read and learn from them.**
 
-The code (real code such as JavaScript, Rust, and Python; not markup/stylesheets) is fully open source under the [MIT License](LICENSE-MIT).
+The code (real code such as JavaScript, Rust, and Python; not markup/stylesheets) is fully open source under the [MIT License](LICENSE-MIT.md).
 
 Content is licensed under [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) by Elliot Killick.
 
