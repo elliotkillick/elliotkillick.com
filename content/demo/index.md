@@ -253,7 +253,7 @@ Block quote sample:
 {{ alert_info(message="Here's a small titbit of information for you.") }}
 {{ alert_warning(message="Hey! Be careful of what you're doing over there!") }}
 {{ alert_success(message="Wow! Great job! Whatever you were doing works!") }}
-{{ alert_danger(message="Oh dear. You just broke the internet. Self destruction in 3... 2... 1...") }}
+{{ alert_danger(message="Oh dear. You just broke the internet.") }}
 
 ### Header III
 

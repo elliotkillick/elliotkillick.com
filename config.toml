@@ -71,7 +71,7 @@ active=true
 
 # Include a text snippet in the sidebar
 # You can format it with HTML
-text_snippet="<strong>Hi, I'm Elliot!</strong> Welcome to my <a href='/' >blog</a> dedicated to teaching you <i>everything</i> I know about the world of 'hacking' and information security. Through my content, you can expect to see me sharing all my techniques, <mark>tricks of the trade</mark>, and security research. Plus, bringing you along for the journey while I also learn more about the craft. Be notified of new findings first by following my RSS/email feed, Twitter, and GitHub!"
+text_snippet="<strong>Hi, I'm Elliot!</strong> Welcome to my <a href='/' >blog</a> dedicated to teaching you <i>everything</i> I know about the world of 'hacking' and information security. Through my content, you can expect to see me sharing all my techniques, '<mark>tricks of the trade</mark>', and security research. Plus, bringing you along for the journey while I also learn more about the craft. Be notified of new findings first by following my RSS/email feed, Twitter, and GitHub!"
 
 # Author card
 author_bio = "Security engineer & researcher"
