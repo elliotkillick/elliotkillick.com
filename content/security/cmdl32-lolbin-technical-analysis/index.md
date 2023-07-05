@@ -3,7 +3,7 @@ title="Cmdl32 Lolbin: Technical Analysis of a Downloader Baked into Windows"
 description="How you could have found it yourself and how it went undetected for over a decade..."
 date=2023-06-29
 [taxonomies]
-categories = ["lolbin"]
+categories = ["lolbin", "security"]
 tags = ["windows", "technical"]
 
 [extra]
