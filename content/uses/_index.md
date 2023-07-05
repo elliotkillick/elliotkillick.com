@@ -113,7 +113,7 @@ All of the below software is open source (with minor noted exceptions) which acc
 - https://grep.app for searching tons of GitHub repos all at once
   - Usually to find out the best common practice for doing something
   - Not open source but it's a website and the most valuable thing here is the data
-- https://regexr.com for building and testing regexs
+- https://regexr.com (and debuggex.com; closed) for building and testing regexs
 - https://godbolt.org for seeing how source code maps to assembly code
 - https://cppinsights.io for finding out what C++ syntactical sugar compiles down to (in terms of more low-level language primitves)
 - https://send.vis.ee (Send) for fast, secure, and lightweight file sharing (based on Firefox Send before it was shutdown)
