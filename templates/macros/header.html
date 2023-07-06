@@ -1,5 +1,5 @@
 {% macro header(grid_size) %}
-<header id="header" class="section">
+<header id="header" class="section" role="banner">
   <section class="container {{ grid_size }}">
     <nav class="navbar">
       <!-- MY EDIT -->
@@ -35,7 +35,7 @@
 
 {% if config.extra.hamburger_menu %}
 <div class="mobile-menu">
-  <div class="button_container" id="toggle">
+  <div class="button_container" id="toggle" role="menu" aria-label="Site navigation expandable mobile menu button">
     <span class="top"></span>
     <span class="middle"></span>
     <span class="bottom"></span>
