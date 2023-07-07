@@ -47,8 +47,8 @@ All of the below software is open source (with minor noted exceptions) which acc
   - Occasionally, Photoshop (proprietary) in its own air-gapped Windows VM to use their selection algorithms for background removal
 - Kdenlive for video editing
 - OBS Studio for recording/streaming
-- ScreenToGif for recording GIFs on Windows
-- Byzanz for recording GIFs on Linux
+- ScreenToGif for easily recording short clips (w/o audio) on Windows (includes a few built-in editing features)
+- Byzanz for simply recording videos on Linux
   - Minimal (doesn't use FFmpeg; just X) and works
 - Exodus for quickly relocating (dynamically linked) Linux binaries and all of its library/data dependencies across machines
   - Effectively makes Linux (ELF) executables as portable (or "backwards compatible") between OS versions as Windows (PE) executables tend to be so you can have the best of both designs
