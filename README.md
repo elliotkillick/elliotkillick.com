@@ -42,7 +42,7 @@ The only non-Rust web component that can reasonably be ported to Rust is the Ngi
 
 ## Licensing
 
-**HTML and CSS/SASS including (but not limited to) everything under the `templates`, `sass`, and `static/assets/stylesheets` directories has [all rights reserved](LICENSE-RESERVED.md). You cannot use these file types or the files within these directories in any way except to read and learn from them.**
+**HTML and CSS/SCSS including (but not limited to) everything under the `templates`, `sass`, and `static/assets/stylesheets` directories has [all rights reserved](LICENSE-RESERVED.md). You cannot use these file types or the files within these directories in any way except to read and learn from them.**
 
 The code (real code such as JavaScript, Rust, and Python; not markup/stylesheets) is fully open source under the [MIT License](LICENSE-MIT.md).
 
@@ -72,7 +72,7 @@ Icons from Bootstrap, css.gg, Font Awesome, and Tabler (all MIT licenses).
 
 Integration and customization of these components plus other additions by Elliot Killick (all rights reserved / MIT license).
 
-You are expressly forbidden from making copies of my personal website and putting it up on the Internet. You're free to take inspiration and learn from it but don't use my individualized work as a template/theme for your own website under any circumstance. Besides, you can be much more creative than that! Also, it's illegal under the all rights reserved licensing for HTML and CSS/SASS.
+You are expressly forbidden from making copies of my personal website and putting it up on the Internet. You're free to take inspiration and learn from it but don't use my individualized work as a template/theme for your own website under any circumstance. Besides, you can be much more creative than that! Also, it's illegal under the all rights reserved licensing for HTML and CSS/SCSS.
 
 Similarly, please don't copy my content into your own paid infosec Udemy course or otherwise (as I heard this has happened). The sharealike ("SA") clause of the Creative Commons license I'm using would also make it illegal to do so.
 
