@@ -22,7 +22,7 @@ Code subkey:
 
 Website subkey:
 
-- Used to sign Git commits to my elliotkillick.com repo on GitHub
+- Used to sign Git commits to my elliotonsecurity.com repo on GitHub
 
 Messages (Sign) subkey:
 

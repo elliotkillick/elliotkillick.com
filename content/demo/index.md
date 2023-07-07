@@ -24,7 +24,7 @@ Inline code: `println!("EOS!");`
 Zola has built in syntax highlighting. If there's not a theme you like, you can
 easily add more.
 
-elliotkillick.com has Fira Code fonts, which means we get ligatures in addition to
+elliotonsecurity.com has Fira Code fonts, which means we get ligatures in addition to
 Zola's powerful syntax highlighting ✨.
 
 ```rs

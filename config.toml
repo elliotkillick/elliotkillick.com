@@ -1,6 +1,5 @@
 # The URL the site will be built for
-base_url = "/"
-#base_url = "elliotkillick.com"
+base_url = "https://elliotonsecurity.com"
 
 title = "Elliot on Security"
 description = "Information security and hacking blog"

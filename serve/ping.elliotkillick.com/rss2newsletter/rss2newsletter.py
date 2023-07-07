@@ -16,15 +16,15 @@ import feedparser
 HOME = str(Path.home())
 
 # Configuration variables
-ROOT_URL = "https://elliotkillick.com"
+ROOT_URL = "https://elliotonsecurity.com"
 RSS_URL = f"{ROOT_URL}/rss.xml"
 FEED_ENTRY_LINKS_FILE = f"{HOME}/rss2newsletter/feed_entry_links.txt"
 CONTENT_TEMPLATE_FILE = f"{HOME}/rss2newsletter/content_template.html"
 POLL_INTERVAL = 3 * 60 # Consider using cron job or systemd timer instead
 
-LISTMONK_URL = "http://localhost:9000"
+LISTMONK_URL = "https://ping.elliotkillick.com:8443"
 LISTMONK_USERNAME = "elliotkillick"
-LISTMONK_PASSWORD = "NHiDoW5J*R5ngVDT"
+LISTMONK_PASSWORD = "password"
 
 def main():
     """Program entry point"""

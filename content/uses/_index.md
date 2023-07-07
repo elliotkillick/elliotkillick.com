@@ -142,4 +142,4 @@ All of the below software is open source (with minor noted exceptions) which acc
 
 ---
 
-To learn what this page looked like in the past, check out [its file history on GitHub](https://github.com/ElliotKillick/elliotkillick.com/commits/master/content/uses/_index.md).
+To learn what this page looked like in the past, check out [its file history on GitHub](https://github.com/ElliotKillick/elliotonsecurity.com/commits/main/content/uses/_index.md).
