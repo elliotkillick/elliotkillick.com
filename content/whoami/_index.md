@@ -22,7 +22,7 @@ I intend to start posting new content on my blog/Twitter/YouTube/Twitch more tha
 
 ## Current Focus
 
-I'm currently working on multiple current and future open source projects as well as conducting independent research in the field of binary exploitation. Some of my upcoming projects will be more red team oriented (shifting away from my almost exclusive focus on blue team work so far).
+I'm currently working on multiple current and future open source projects as well as conducting independent research in the field of binary exploitation. Some of my upcoming projects will be more red team oriented (shifting away from my almost exclusive focus on blue team work so far). Smart contract and blockchain application security auditing is an area I'm familiarizing myself with right now.
 
 ## Let's connect!
 
