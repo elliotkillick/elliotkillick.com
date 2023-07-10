@@ -68,11 +68,9 @@ All of the below software is open source (with minor noted exceptions) which acc
 - QDirStat
 - WinDirStat on Windows
 - MSYS2 Bash shell (and Mintty terminal) on Windows as a CMD replacement and for coreutils (also prefer this over long object-oriented PowerShell commands IMO)
-  - Better auto-complete plus support for transparency and color (e.g. PowerShell has no colored `ls`)
-  - Many basic things like directory listings are noticeably faster with Bash `ls` than CMD `dir` (PowerShell `ls` is even slower than CMD `dir`!)
   - With a minimal dotfile that improves Windows integration (among other things)
-  - Also, nice that the same commands work across my Linux and Windows VMs
-  - It even comes with a real package manager (`pacman`) for installing packaged Windows binaries
+  - Enables the same commands to work across my Linux and Windows VMs
+  - Comes with a real package manager (`pacman`) for installing packaged Windows programs
 - 7-Zip on Windows for compressing/archiving and file hashing
 - Rufus for creating bootable USB drives on Windows (e.g. from an ISO file or disk image in `dd` mode)
 - PE Tree and PEStudio for initial analysis of a PE (e.g. EXE or DLL) file (the latter is closed source and Windows-only)
