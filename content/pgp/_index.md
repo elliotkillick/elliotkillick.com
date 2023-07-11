@@ -36,6 +36,6 @@ Messages (Encrypt) subkey:
 
 If you're sending me a PGP encrypted message then use the Messages key. Note that I prefer [Wire](wire.com) for end-to-end encrypted messages (you will receive a quicker response this way) but if you would rather send a PGP encrypted email or even a PGP encrypted Wire message (only do this if the extra security is absolutely necessary) then go for it.
 
-[PGP key download](/elliotkillick.asc) | [PGP key mirror](https://keys.openpgp.org/search?q=contact@elliotkillick.com)
+[PGP key download](/elliotkillick.asc) | <a href="https://keys.openpgp.org/search?q=contact@elliotkillick.com" target="_blank">PGP key mirror</a>
 
 These vanity PGP keys were generated through brute-force with the VanityGPG Rust crate.

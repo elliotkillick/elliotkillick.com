@@ -4,6 +4,12 @@ AppVM: zola serve -i 0.0.0.0 -u 192.168.0.2
     - -u affects what get_url() in Tera templating language returns, this should be the IP of sys-net
 Temporarily comment out HTTPS upgrade CSP from templates/index.html
 
+Substitute all external markdown hyperlinks for HTML hyperlinks with target=_blank:
+sed -i -E 's/(.*)\[(([[:alnum:]]|[[:space:]]|[[:punct:]])+)\]\((http([[:alnum:]]|[[:punct:]])+)\)(.*)/\1<a href="\4" target="_blank">\2<\/a>\6/g' index.md
+Adapted from: https://gist.github.com/mdonkers/e4d76ad619683195f106bc00a5bff1a5
+Bug: If more than one hyperlink exists on the same line then only the first hyperlink will be substituted
+Workaround: Run the sed command multiple times
+
 Get ECC certificate for ping.elliotkillick.com:
 sudo certbot certonly --nginx -d ping.elliotkillick.com --key-type ecdsa
 Certbot will now automatically renew this certificate.
