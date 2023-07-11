@@ -62,7 +62,7 @@ CVSS: <span style="font-weight: 800">* <span style="color: red; text-decoration:
 </div>
 
 - Windows Defender Tamper Protection is yet another piece of security theater by Microsoft which poses no real security barrier
-  - To my knowledge, I was the first to come out with a clean "bypass" for disabling Tamper Protection which works by editing a registry key ACL (also reporting it to the MSRC)
+  - To my knowledge, I was the first to come out with a [clean "bypass"](https://github.com/ElliotKillick/qvm-create-windows-qube/blob/2cad79d6da933254663beebe03022d5a5dd3cc7b/post/optimize.bat#L49-L63) for disabling Tamper Protection which works by editing a registry key ACL (also reporting it to the MSRC)
   - This is a universal technique that works to defeat the tamper protection mechanisms of any antivirus program on Windows
 - LOLBin findings in the default Windows installation
   - Demonstrates how misuse of programs built into the latest versions of Windows can pose a security threat
