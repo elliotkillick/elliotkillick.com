@@ -1,3 +1,4 @@
+// Load all Twitter embeds once any one of them is viewed
 function lazyLoad() {
     const scriptTag = document.createElement('script');
     scriptTag.async = true;
@@ -6,25 +7,19 @@ function lazyLoad() {
     head.appendChild(scriptTag);
 }
 
-let observer = new IntersectionObserver(function(entries) {
-    if (entries[0].isIntersecting) {
-        if (lazyTweet) {
-            observer.unobserve(lazyTweet);
-	}
-        if (lazyTimeline) {
-            observer.unobserve(lazyTimeline);
-        }
+const twitterEmbedObserver = new IntersectionObserver(function(entries) {
+    if (!entries[0].isIntersecting) return;
 
-        console.log("Lazy loading Twitter embed(s) now!");
-        lazyLoad();
-    }
+    // Unobserve all Twitter embed elements once any one of them is viewed
+    if (lazyTweet) twitterEmbedObserver.unobserve(lazyTweet);
+    if (lazyTimeline) twitterEmbedObserver.unobserve(lazyTimeline);
+
+    console.log("Lazy loading Twitter embed(s) now!");
+    lazyLoad();
 });
 
+// Observe first of each kind of Twitter embed
 const lazyTweet = document.querySelector(".twitter-tweet");
 const lazyTimeline = document.querySelector(".twitter-timeline");
-if (lazyTweet) {
-    observer.observe(lazyTweet);
-}
-if (lazyTimeline) {
-    observer.observe(lazyTimeline);
-}
+if (lazyTweet) twitterEmbedObserver.observe(lazyTweet);
+if (lazyTimeline) twitterEmbedObserver.observe(lazyTimeline);

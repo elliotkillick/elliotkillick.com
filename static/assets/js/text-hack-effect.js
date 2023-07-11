@@ -4,10 +4,10 @@ function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function getRandomLetter() {
- var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
  // MY EDIT
- // Convert to uppercase
- return alphabet[rand(0,alphabet.length - 1)].toUpperCase()
+ // Uppercase alphabet
+ var alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+ return alphabet[rand(0,alphabet.length - 1)]
 }
 
 function getRandomWord(word) {
@@ -21,7 +21,7 @@ function getRandomWord(word) {
   return finalWord
 }
 
-// Applied to first h1
+// Applies to first h1 element
 var word = document.querySelector('h1')
 var interv = 'undefined'
 var canChange = false
