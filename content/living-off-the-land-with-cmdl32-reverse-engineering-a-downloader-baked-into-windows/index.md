@@ -1,11 +1,11 @@
 +++
-title="Living Off the Land with Cmdl32: Technical Analysis of a Downloader Baked into Windows"
+title="Living Off the Land with Cmdl32: Reverse Engineering a Downloader Baked into Windows"
 description="How you could have found it yourself and how it went undetected for over a decade..."
 date=2023-06-29
 aliases = ["cmdl32-lolbin-technical-analysis", "1"]
 [taxonomies]
-categories = ["reverse engineering", "living off the land", "security"]
-tags = ["windows", "technical"]
+categories = ["reverse engineering", "security"]
+tags = ["windows", "living off the land", "technical"]
 
 [extra]
 cover_image="cover.png"
@@ -13,7 +13,7 @@ og_image="cover.png"
 toc=true
 +++
 
-{{ alert_info(message="Programs built into Windows with potentially dangerous functionality (i.e. 'living off the land' techniques commonly referred to as <a href='https://github.com/LOLBAS-Project/LOLBAS/blob/master/README.md' target='_blank'>'lolbins'</a>) are not security threats in the sense that they have no threat model besides the cat-and-mouse game of detection by antivirus software* (e.g. Windows Defender). I enjoy searching for them in the default Windows installation mostly because it's fun, easy to do, and good reverse engineering practice. Even then, the quality of 'living off the land' techniques can vary drastically in terms of how practically useful they would be in a real-world attack (Personally, I prefer to only report some of the nicer ones I find). Other times, the term 'lolbin' is (ironically) completely misused. Antivirus software should only be used as part of a more holisitc defense-in-depth strategy. If 'real' security is what you want then have a look at my binary exploitation or Qubes OS content (upcoming).") }}
+{{ alert_info(message="Programs built into Windows with potentially dangerous functionality (i.e. 'living off the land' techniques commonly referred to as <a href='https://github.com/LOLBAS-Project/LOLBAS/blob/master/README.md' target='_blank'>'lolbins'</a>) are not security threats in the sense that they have no threat model besides the cat-and-mouse game of detection by antivirus software<b>*</b> (e.g. Windows Defender). I enjoy searching for them in the default Windows installation mostly because it's fun, easy to do, and good reverse engineering practice. Even then, the quality of 'living off the land' techniques can vary drastically in terms of how practically useful they would be in a real-world attack (Personally, I prefer to only report some of the nicer ones I find). Other times, the term 'lolbin' is (ironically) completely misused. Antivirus software should only be used as part of a more holisitc defense-in-depth strategy. If 'real' security is what you want then have a look at my binary exploitation or Qubes OS content (upcoming).") }}
 
 `C:\Windows\System32\cmdl32.exe` is a program that's existed since the release of Windows 7/Vista replacing `cmdln32.exe` (with an "n") which worked in its place up until Windows XP. It's an antiquated tool for downloading old phone book profiles back in the days of dial-up Internet and has this icon:
 
@@ -182,4 +182,4 @@ While writing this blog post, I was unsure of how much technical knowledge to as
 
 2023 Update: Microsoft has now made the PDB (including function debug symbols) for `Cmdl32.exe` public which would have made this 'living off the land' technique considerably easier to find. Also, there have been changes to how it works since initial discovery (namely I notice that the `/vpn` (`0x40`) and `/lan` (`0x20`) are no longer checked at the same time as `0x60` but instead in two parts (additionally, I think the hex identifiers changed). Also, `RasEnumConnectionsA` is now only ever called from one function in `Cmdl32.exe` named `IsConnectionAlive` whereas before `RasEnumConnectionsA` was directly called all over the place (leading to code duplication). To me it looks like `Cmdl32.exe` has undergone a large refactoring. This analysis covers the 2023 version of [Cmdl32.exe](cmdl32.exe). This 'living off the land' technique is still 100% working.
 
-\*There have been a few cases where Microsoft removed potentially dangerous functionality (e.g. `MpCmdRun.exe` downloader, Mandiant's `rasautou.exe` DLL runner, and occasionally built-in UAC bypasses) but these are the exception, not the rule. Also, the potentially dangerous functionality of some built-in programs breaks the threat model of WDAC and AppLocker. However, deployment of these security controls is rare.
+<b>*</b>There have been a few cases where Microsoft removed potentially dangerous functionality (e.g. `MpCmdRun.exe` downloader, Mandiant's `rasautou.exe` DLL runner, and occasionally built-in UAC bypasses) but these are the exception, not the rule. Also, the potentially dangerous functionality of some built-in programs breaks the threat model of WDAC and AppLocker. However, deployment of these security controls is rare.
