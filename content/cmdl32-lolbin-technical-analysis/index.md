@@ -3,7 +3,7 @@ title="Cmdl32 Lolbin: Technical Analysis of a Downloader Baked into Windows"
 description="How you could have found it yourself and how it went undetected for over a decade..."
 date=2023-06-29
 [taxonomies]
-categories = ["lolbin", "security"]
+categories = ["reverse engineering", "lolbin", "security"]
 tags = ["windows", "technical"]
 
 [extra]
@@ -28,7 +28,7 @@ Sitting dormant for over a decade was a hidden feature of `Cmdl32.exe` that if m
 
 A lot of the technical details have already been covered well in <a href="https://www.hexacorn.com/blog/2017/04/30/the-archaeologologogology-3-downloading-stuff-with-cmdln32/" target="_blank">Adam's (Hexacorn's) blog post</a> where he came incredibly close to discovering this <a href="https://github.com/LOLBAS-Project/LOLBAS/blob/master/README.md" target="_blank">lolbin</a> himself. I won't repeat any of what he said there so make sure you go give that a read.
 
-What I will be covering are the techniques I used to overcome the final three hurdles in reverse engineering and practical use of this lolbin so you can improve the caliber of your reverse engineering skills and maybe help you find some lolbins yourself! The tool we will be using to do this reverse engineering is <a href="https://hex-rays.com/ida-free/" target="_blank">IDA (Interactive Disassembler) Free</a>.
+What I will be covering are the techniques that were used to overcome the final three hurdles in reverse engineering and practical use of this lolbin so you can improve the caliber of your **reverse engineering skills** and maybe help you find some lolbins yourself! The tool we will be using to do this reverse engineering is <a href="https://hex-rays.com/ida-free/" target="_blank">IDA (Interactive Disassembler) Free</a>.
 
 ### Hurdle 1: The Final Argument
 
