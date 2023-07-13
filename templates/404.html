@@ -28,12 +28,12 @@ drwxr-xr-x 20 www-data www-data 4096 May  9 11:52 ..
       {%- set num = config.extra.main_menu | length -%}
       <ul>
         <li><a href="/">Homepage</a></li>
-          
+
         {% if num > 0 -%}
           <!-- MY EDIT -->
           <!-- Don't print fancy blinking terminal cursor for whoami here -->
           {%- set menu = config.extra.main_menu -%}
-	  {%- for menu_item in menu -%}
+	      {%- for menu_item in menu -%}
             <li><a href="{{ get_url(path=menu_item.url) }}">
             {% if menu_item.name != "whoami" %}
               {{ menu_item.name }}
@@ -50,7 +50,7 @@ drwxr-xr-x 20 www-data www-data 4096 May  9 11:52 ..
       Otherwise, you can search all over the website from the search bar up here.
     </p>
 
-    <!-- div class="search-container">{# TODO #}</div --> 
+    <!-- div class="search-container">{# TODO #}</div -->
 
     {% endif %}{# ./if ddg_search #}
     </div>
