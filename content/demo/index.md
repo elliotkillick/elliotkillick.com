@@ -1,6 +1,6 @@
 +++
 title="Website Demo"
-description="A basic demo of Zola"
+description="Let's take this website out for a spin!"
 date=2022-01-01
 
 [taxonomies]
@@ -13,7 +13,7 @@ og_image="cover.png"
 toc=true
 +++
 
-Here's a general demo of Zola and how things look.
+Here's a general demo of elliotonsecurity.com as rendered by Zola (a Rust powered static site generator) and how things look.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
@@ -259,15 +259,15 @@ Block quote sample:
 
 OpenBSD mitigation tier table:
 
-| Name                 | Description                                                                               | Tier  | Remarks                                                                                                                                                                                                 |
-|----------------------|-------------------------------------------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| KARL                 | Randomly relinks kernel objects every boot                                                | A-    | Stronger than standard ASLR. Can only protect against small leaks (e.g. uninitialized variable) and make some relative write bugs more difficult to exploit                                              |
-| Otto Malloc          | Seriously hardened heap implementation                                                    | A     | Makes inter-chunk heap corruption and use-after-frees much more difficult to reliably exploit (more so than other hardened mallocs). A tad bit slow                                                     |
-| RETGAURD             | Function prologue combines return address + random cookie - value validated before return | C     | Guards against return address overwrite in a stack buffer overflow. Also a CFI mechanism, backward-edge RETGAURD can be bypassed by arbitrary read and forward-edge protection is non-existent on OpenBSD |
-| Pledge               | Simple and effective system call filtering                                                | A     | Part of an effective sandbox; like seccomp on Linux but easier to implement. Also, OpenBSD only has ~230 (all archs) syscalls and no procfs compared to ~335 (only x86-64) or 400+ (arm64) on Linux     |
-| TRAPSLED             | Converts NOP -> INT3 instructions during compilation                                      | **S** | True successor to ASLR. Next-gen pointer authentication.                                                                                                                                                |
-| doas                 | Secure privilege escalation                                                               | A+    | Only ~400 lines of code in one file compared to sudo with 20K+ lines of C code                                                                                                                          |
-| Attack Surface       | How many lines of code overall                                                            | S     | OpenBSD is at least 20 million lines of code lighter than Linux. Note that a lot of this is in drivers that nobody will be using all at once. However, OpenBSD still easily prevails here               |
+| Name                 | Description                                                                               | Tier   | Remarks                                                                                                                                                                                                   |
+|----------------------|-------------------------------------------------------------------------------------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| KARL                 | Randomly relinks kernel objects every boot                                                | A-     | Stronger than standard ASLR. Can only protect against small leaks (e.g. uninitialized variable) and make some relative write bugs more difficult to exploit                                               |
+| Otto Malloc          | Seriously hardened heap implementation                                                    | A      | Makes inter-chunk heap corruption and use-after-frees much more difficult to reliably exploit (more so than other hardened mallocs). A tad bit slow                                                       |
+| RETGAURD             | Function prologue combines return address + random cookie - value validated before return | C      | Guards against return address overwrite in a stack buffer overflow. Also a CFI mechanism, backward-edge RETGAURD can be bypassed by arbitrary read and forward-edge protection is non-existent on OpenBSD |
+| Pledge               | Simple and effective system call filtering                                                | A      | Part of an effective sandbox; like seccomp on Linux but easier to implement. Also, OpenBSD only has ~230 (all archs) syscalls and no procfs compared to ~335 (only x86-64) or 400+ (arm64) on Linux       |
+| TRAPSLED             | Converts NOP -> INT3 instructions during compilation                                      | **/S** | True successor to ASLR. Next-gen pointer authentication.                                                                                                                                                  |
+| doas                 | Secure privilege escalation                                                               | A+     | Only ~400 lines of code in one file compared to sudo with 20K+ lines of C code                                                                                                                            |
+| Attack Surface       | How many lines of code overall                                                            | S      | OpenBSD is at least 20 million lines of code lighter than Linux. Note that a lot of this is in drivers that nobody will be using all at once. However, OpenBSD still easily prevails here                 |
 
 #### Header IV
 
