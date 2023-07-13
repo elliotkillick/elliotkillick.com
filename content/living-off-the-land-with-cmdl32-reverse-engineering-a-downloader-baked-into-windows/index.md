@@ -1,6 +1,6 @@
 +++
 title="Living Off the Land with Cmdl32: Reverse Engineering a Downloader Baked into Windows"
-description="How you could have found it yourself and how it went undetected for over a decade..."
+description="Gain the reverse engineering proficiency needed to find new 'living off the land' programs in Windows. Plus, how this one went undiscovered for over a decade!"
 date=2023-06-29
 aliases = ["cmdl32-lolbin-technical-analysis", "1"]
 [taxonomies]
