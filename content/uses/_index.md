@@ -98,8 +98,8 @@ All of the below software is open source (with minor noted exceptions) which acc
   - The boot manager that comes with my Gigabyte motherboard is very poor not even providing an option to boot from a custom EFI file
   - Tiny and generally solves all my booting problems (it's saved me from malformed/corrupted boot partitions)
 - Qubes OS for all general purpose computing
-  - <a href="https://github.com/ElliotKillick/qvm-create-windows-qube" target="_blank">Qvm-Create-Windows-Qube</a> for automating the creation of Windows VMs for hacking labs (shameless plug)
-  - <a href="https://github.com/ElliotKillick/qubes-video-companion" target="_blank">Qubes Video Companion</a> for secure inter-VM webcam use in virtual meetings (\*shamelessness intensifies\*)
+  - <a href="https://github.com/ElliotKillick/qvm-create-windows-qube?ref=elliotonsecurity.com" target="_blank">Qvm-Create-Windows-Qube</a> for automating the creation of Windows VMs for hacking labs (shameless plug)
+  - <a href="https://github.com/ElliotKillick/qubes-video-companion?ref=elliotonsecurity.com" target="_blank">Qubes Video Companion</a> for secure inter-VM webcam use in virtual meetings (\*shamelessness intensifies\*)
 - OpenBSD for remoting into my Qubes OS machine from anywhere in the world
   - Securely set up SSH tunnel to Dom0 with TigerVNC inside
   - cwm window manager
@@ -140,4 +140,4 @@ All of the below software is open source (with minor noted exceptions) which acc
 
 ---
 
-To learn what this page looked like in the past, check out <a href="https://github.com/ElliotKillick/elliotonsecurity.com/commits/main/content/uses/_index.md" target="_blank">its file history on GitHub</a>.
+To learn what this page looked like in the past, check out <a href="https://github.com/ElliotKillick/elliotonsecurity.com/commits/main/content/uses/_index.md?ref=elliotonsecurity.com" target="_blank">its file history on GitHub</a>.

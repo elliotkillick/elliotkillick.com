@@ -34,8 +34,8 @@ Messages (Encrypt) subkey:
 - For ECC certificates, encryption requires a cv25519 key (as opposed to the ed25519 keys above)
     - I haven't started bruteforcing this yet because VanityGPG doesn't directly support cv25519 (I've made an incomplete one line patch that allow for cv25519 fingerprint calculation but `get_armored_results()` needs work to nicely output a blank PGP master key with the vanity encryption subkey attached. Then, its keygrip (a GPG implementation detail referring to the (256-bit ECC) key material) can be moved across keys while faking system time to get the same fingerpint on another key. I've already established a working process for the latter.)
 
-If you're sending me a PGP encrypted message then use the Messages key. Note that I prefer [Wire](wire.com) for end-to-end encrypted messages (you will receive a quicker response this way) but if you would rather send a PGP encrypted email or even a PGP encrypted Wire message (only do this if the extra security is absolutely necessary) then go for it.
+If you're sending me a PGP encrypted message then use the Messages key. Note that I prefer <a href="https://wire.com?ref=elliotonsecurity.com" target="_blank">Wire</a> for end-to-end encrypted messages (you will receive a quicker response this way) but if you would rather send a PGP encrypted email or even a PGP encrypted Wire message (only do this if the extra security is absolutely necessary) then go for it.
 
-[PGP key download](/elliotkillick.asc) | <a href="https://keys.openpgp.org/search?q=contact@elliotkillick.com" target="_blank">PGP key mirror</a>
+[PGP key download](/elliotkillick.asc) | <a href="https://keys.openpgp.org/search?q=contact@elliotkillick.com&amp;ref=elliotonsecurity.com#abc" target="_blank">PGP key mirror</a>
 
 These vanity PGP keys were generated through brute-force with the VanityGPG Rust crate.

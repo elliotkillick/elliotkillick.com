@@ -15,7 +15,7 @@ date = 2022-06-24
 
 &ensp;&ensp;&ensp;&ensp;I'm a security engineer and researcher from Toronto, Canada.<br />
 &ensp;&ensp;&ensp;&ensp;I enjoy building open source, security-oriented projects that help people accomplish their objectives & push what we can do with our technology further. Also of great interest to me is finding and exploiting novel software bugs especially as it pertains to low-level systems programming.<br />
-&ensp;&ensp;&ensp;&ensp;My open source software (<a href="https://github.com/ElliotKillick)" target="_blank">OSS</a> has been used by thousands of people & I regularly share engaging educational content in the form of [blog posts](/) and <a href="https://twitter.com/ElliotKillick" target="_blank">tweets</a>. Interacting with people and answering any questions they may have to the best of my knowledge & experience on the content I've shared is something you will often find me doing. See my [CVEs](/cves) and <a href="https://hackerone.com/ElliotKillick" target="_blank">HackerOne</a> for info on some of the software I've had an impact in securing.<br />
+&ensp;&ensp;&ensp;&ensp;My open source software (<a href="https://github.com/ElliotKillick?ref=elliotonsecurity.com" target="_blank">OSS</a> has been used by thousands of people & I regularly share engaging educational content in the form of [blog posts](/) and <a href="https://twitter.com/ElliotKillick?ref=elliotonsecurity.com" target="_blank">tweets</a>. Interacting with people and answering any questions they may have to the best of my knowledge & experience on the content I've shared is something you will often find me doing. See my [CVEs](/cves) and <a href="https://hackerone.com/ElliotKillick?ref=elliotonsecurity.com" target="_blank">HackerOne</a> for info on some of the software I've had an impact in securing.<br />
 &ensp;&ensp;&ensp;&ensp;I delight in open sourcing all the things (I have a whole back catalog of previously created tools and small projects I've been meaning to open source) and documenting my work thoroughly so others can learn from it.<br />
 
 I intend to start posting new content on my blog/Twitter/YouTube/Twitch more than once per week!
@@ -38,7 +38,6 @@ The fastest way you can get in touch with me is through my Twitter DMs. For prof
 
 If there's something in particular that you want to see or want me to look into, feel free to let me know. Currently, I have over 50 pieces of content planned (30+ of those being blog posts) but I'll see what I can do.
 
-If I don't respond, I don't hate you I'm just busy. I unfortunately cannot commit to providing private one-on-one support at no cost (you would probably best be served by creating a GitHub issue or asking in the Qubes OS Forum). Please no spam and no I won't hack someone for you.
+If I don't respond, I don't hate you I'm just busy. I unfortunately cannot commit to providing private one-on-one support at no cost (you would probably best be served by creating a GitHub issue or asking on the Qubes OS Forum). Please no spam and no I won't hack someone for you.
 
 [PGP Key & Subkeys](/pgp)
-

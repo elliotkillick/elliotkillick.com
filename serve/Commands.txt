@@ -9,6 +9,9 @@ sed -i -E 's/(.*)\[(([[:alnum:]]|[[:space:]]|[[:punct:]])+)\]\((http([[:alnum:]]
 Adapted from: https://gist.github.com/mdonkers/e4d76ad619683195f106bc00a5bff1a5
 Bug: If more than one hyperlink exists on the same line then only the first hyperlink will be substituted
 Workaround: Run the sed command multiple times
+Missing feature: Doesn't add "?ref=<DOMAIN>" to URLs (difficult to implement because it would have to account for cases of an already existing get parameter in the URL; ? or &amp; AND would have to be placed before any anchor; #)
+<a href="https://example.com?ref=elliotonsecurity.com" target="_blank">HackerOne Report</a>
+Workaround: Use new "a" (hyperlink) shortcode in the future to create hyperlinks: {{ a(l="https://example.com", q="?test=true", a="#test", t="Test123") }}
 
 Get ECC certificate for ping.elliotkillick.com:
 sudo certbot certonly --nginx -d ping.elliotkillick.com --key-type ecdsa
